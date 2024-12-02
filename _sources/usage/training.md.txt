@@ -1,4 +1,4 @@
-# Training
+# Training an Agent
 
 In `scripts/`, there are scripts setup for training. Depending on the system (i.e., cluster, locally, etc.), you may need to run different commands.
 

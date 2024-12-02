@@ -6,10 +6,9 @@
 :maxdepth: 2
 
 Home <self>
-background
 setup
-configuration/index
 usage/index
+examples/index
 reference/index
 contributing
 ```

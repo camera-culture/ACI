@@ -24,6 +24,3 @@ api/cambrian/renderer/index
 api/cambrian/utils/index
 api/cambrian/utils/config/index
 ```
-
-[myst-markdown]: https://myst-parser.readthedocs.io/en/latest/
-[restructuredtext]: https://docutils.sourceforge.io/docs/user/rst/quickref.html
