@@ -15,7 +15,7 @@ A `conda` or `virtualenv` will add isolation to your python environments and red
 Clone the repo as normal:
 
 ```bash
-git clone https://github.com/camera-culture/EyesOfCambrian.git && cd EyesOfCambrian
+git clone https://github.com/camera-culture/ACI.git && cd ACI
 ```
 
 ### Installing a Symbolic Linked Version for Testing
@@ -30,7 +30,7 @@ pip install -e .
 
 [GitHub actions](https://github.com/features/actions) are used to automatically build the site and [GitHub pages](https://pages.github.com/) are used to host the static site. To update deployed content, you have to push to the `main` branch. Once the changes are pushed, the site will rebuild. Please ensure there are no errors in your code/documentation before doing so, as you may get an email from github if something bad happens.
 
-<!-- Further, to update the package available on [PyPI](https://pypi.org/project/EyesOfCambrian/), you must create a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). When a tag is created and pushed to GitHub, it will start an Action which will automatically push the new release to PyPI. See [Versioning](#versioning) for information on how versioning works with `EyesOfCambrian`. The Github Action only runs when the tag is pushed to main through a merge request. To create a tag, you may do the following: -->
+<!-- Further, to update the package available on [PyPI](https://pypi.org/project/ACI/), you must create a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). When a tag is created and pushed to GitHub, it will start an Action which will automatically push the new release to PyPI. See [Versioning](#versioning) for information on how versioning works with `ACI`. The Github Action only runs when the tag is pushed to main through a merge request. To create a tag, you may do the following: -->
 <!--  -->
 <!-- ```bash -->
 <!-- git tag <tag> # An example tag is v3.0.1 -->
@@ -50,7 +50,7 @@ A lot of work has gone into making this package functional and scalable. Please 
 The repository is structured as follows:
 
 ```
-EyesOfCambrian/
+ACI/
 ├── cambrian/           # Source code
 ├── docs/               # Contains documentation
 ├── configs/            # Configuration files for experiments
@@ -103,7 +103,7 @@ docs/
 ├── _static/            # Static files that persist through the build process
 │   ├── css/custom.css  # Custom css changes that are different from the default furo theme
 │   └── ...             # Images, favicons, etc.
-├── usage/              # Usage reference guide for the EyesOfCambrian package
+├── usage/              # Usage reference guide for the ACI package
 │   └── ...
 ├── setup.md            # Installation build instructions
 ├── contributing.md     # Contributing tab with instructions on how to contribute to the repo
@@ -120,7 +120,7 @@ Markdown files are converted to reStructuredText by `myst_parser` which is used 
 There are multiple ways to build sphinx documentation. The easiest is using the `Makefile` or `make.bat` file provided directly in this repository. You will need to install all the necessary dependencies and build the html pages. To do that, run the following commands:
 
 ```bash
-cd EyesOfCambrian/docs
+cd ACI/docs
 pip install -r requirements.txt
 make clean html
 ```
