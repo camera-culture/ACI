@@ -1,0 +1,44 @@
+cambrian.ml.evo
+===============
+
+.. py:module:: cambrian.ml.evo
+
+.. autoapi-nested-parse::
+
+   Defines the configuration for the evolutionary algorithm.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   cambrian.ml.evo.MjCambrianEvoConfig
+
+
+Module Contents
+---------------
+
+.. py:class:: MjCambrianEvoConfig(content, /, config = None, instantiated = False)
+
+   Bases: :py:obj:`cambrian.utils.config.MjCambrianBaseConfig`
+
+
+   Base config for all configs.
+
+   .. note::
+
+       This class inherits from MjCambrianDictConfig which is a subclass of
+       DictConfig. There are issues with inheriting from DictConfig and instantiating
+       an instance using the hydra instantiate or omegaconf.to_object methods. So these
+       classes aren't meant to be instantiated, but are used for type hinting and
+       validation of the config files.
+
+   :ivar custom: Custom data to use. This is useful for
+                 code-specific logic (i.e. not in yaml files) where you want to store
+                 data that is not necessarily defined in the config.
+
+   :vartype custom: Optional[Dict[Any, str]]
+
+

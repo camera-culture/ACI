@@ -1,0 +1,120 @@
+cambrian.envs.reward_fns
+========================
+
+.. py:module:: cambrian.envs.reward_fns
+
+.. autoapi-nested-parse::
+
+   Reward fns. These can be used to calculate rewards for agents.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   cambrian.envs.reward_fns.reward_for_termination
+   cambrian.envs.reward_fns.reward_for_truncation
+   cambrian.envs.reward_fns.euclidean_delta_from_init
+   cambrian.envs.reward_fns.reward_euclidean_delta_to_agents
+   cambrian.envs.reward_fns.reward_if_agents_respawned
+   cambrian.envs.reward_fns.reward_if_close_to_agents
+   cambrian.envs.reward_fns.penalize_if_has_contacts
+   cambrian.envs.reward_fns.reward_combined
+   cambrian.envs.reward_fns.calc_delta
+   cambrian.envs.reward_fns.check_if_larger
+   cambrian.envs.reward_fns.calc_quickness
+
+
+Module Contents
+---------------
+
+.. py:function:: reward_for_termination(env, agent, terminated, truncated, info, *, reward, for_agents = None, scale_by_quickness = False)
+
+   Terminated indicates that the episode was ended early in a success.
+   Returns termination_reward if terminated, else reward.
+
+
+.. py:function:: reward_for_truncation(env, agent, terminated, truncated, info, *, reward, for_agents = None, scale_by_quickness = False)
+
+   Truncated indicates that the episode was ended early in a failure.
+   Returns truncation_reward if truncated, else reward.
+
+
+.. py:function:: euclidean_delta_from_init(env, agent, terminated, truncated, info, *, factor = 1.0, for_agents = None)
+
+   Rewards the change in distance over the previous step scaled by the timestep.
+
+
+.. py:function:: reward_euclidean_delta_to_agents(env, agent, terminated, truncated, info, *, factor, to_agents = None, for_agents = None, scale_by_quickness = False)
+
+   Rewards the change in distance to any enabled agent over the previous step.
+   Convention is that a positive reward indicates getting closer to the agent.
+
+
+.. py:function:: reward_if_agents_respawned(env, agent, terminated, truncated, info, *, reward, for_agents = None, scale_by_quickness = False)
+
+   This reward function rewards the agent if it has been respawned.
+
+
+.. py:function:: reward_if_close_to_agents(env, agent, terminated, truncated, info, *, reward, distance_threshold, for_agents = None, from_agents = None, to_agents = None, scale_by_quickness = False)
+
+   This reward function rewards the agent if it is close to another agent.
+
+   :keyword reward: The reward to give the agent if it is close to another agent.
+                    Default is 0.
+   :kwtype reward: float
+   :keyword distance_threshold: The distance threshold to check if the agent is
+                                close to another agent.
+   :kwtype distance_threshold: float
+   :keyword for_agents: The names of the agents that the reward
+                        should be calculated for. If None, the reward will be calculated for all
+                        agents.
+   :kwtype for_agents: Optional[List[str]]
+   :keyword from_agents: The names of the agents that the reward
+                         should be calculated from. If None, the reward will be calculated from all
+                         agents.
+   :kwtype from_agents: Optional[List[str]]
+   :keyword to_agents: The names of the agents that the reward
+                       should be calculated to. If None, the reward will be calculated to all
+                       agents.
+   :kwtype to_agents: Optional[List[str]]
+
+
+.. py:function:: penalize_if_has_contacts(env, agent, terminated, truncated, info, *, penalty, for_agents = None, scale_by_quickness = False)
+
+   Penalizes the agent if it has contacts with the ground.
+
+
+.. py:function:: reward_combined(env, agent, terminated, truncated, info, *, exclusive_fns = [], **reward_fns)
+
+   Combines multiple reward functions into one.
+
+   :keyword exclusive_fns: If provided, only the reward functions
+                           with this name will be used if it's non-zero. As in, in order, the first
+                           function to return a non-zero reward will be returned.
+   :kwtype exclusive_fns: Optional[List[str]]
+
+
+.. py:function:: calc_delta(agent, info, point = np.array([0, 0]))
+
+   Calculates the delta position of the agent from a point.
+
+   :returns: *np.ndarray* --
+
+             The delta position of the agent from the point
+                 (i.e. current - prev).
+
+
+.. py:function:: check_if_larger(p1, p2, point = np.array([0, 0]))
+
+   Checks if the distance from point to p1 is larger than the distance from point
+   to p2.
+
+
+.. py:function:: calc_quickness(env)
+
+   Calculates the quickness of the agent.
+
+

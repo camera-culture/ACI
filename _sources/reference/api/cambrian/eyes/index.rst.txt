@@ -1,0 +1,224 @@
+cambrian.eyes
+=============
+
+.. py:module:: cambrian.eyes
+
+.. autoapi-nested-parse::
+
+   This module defines the Cambrian eyes.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /reference/api/cambrian/eyes/eye/index
+   /reference/api/cambrian/eyes/optics/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   cambrian.eyes.MjCambrianEye
+   cambrian.eyes.MjCambrianEyeConfig
+   cambrian.eyes.MjCambrianOpticsEye
+   cambrian.eyes.MjCambrianOpticsEyeConfig
+
+
+Package Contents
+----------------
+
+.. py:class:: MjCambrianEye(config, name)
+
+   Defines an eye for the cambrian environment. It essentially wraps a mujoco Camera
+   object and provides some helper methods for rendering and generating the XML. The
+   eye is attached to the parent body such that movement of the parent body will move
+   the eye.
+
+   :Parameters: * **config** (*MjCambrianEyeConfig*) -- The configuration for the eye.
+                * **name** (*str*) -- The name of the eye.
+
+
+   .. py:method:: generate_xml(parent_xml, geom, parent_body_name)
+
+      Generate the xml for the eye.
+
+      In order to combine the xml for an eye with the xml for the agent that it's
+      attached to, we need to replicate the path with which we want to attach the eye.
+      For instance, if the body with which we want to attach the eye to is at
+      `mujoco/worldbody/torso`, then we need to replicate that path in the new xml.
+      This is kind of difficult with the `xml` library, but we'll utilize the
+      `CambrianXML` helpers for this.
+
+      :Parameters: * **parent_xml** (*MjCambrianXML*) -- The xml of the parent body. Used as a reference
+                     to extract the path of the parent body.
+                   * **geom** (*MjCambrianGeometry*) -- The geometry of the parent body. Used to
+                     calculate the pos and quat of the eye.
+                   * **parent_body_name** (*str*) -- The name of the parent body. Will search for the
+                     body tag with this name, i.e. <body name="<parent_body_name>" ...>.
+
+
+
+   .. py:method:: reset(model, data)
+
+      Sets up the camera for rendering. This should be called before rendering
+      the first time.
+
+
+
+   .. py:method:: step()
+
+      Simply calls `render` and sets the last observation. See `render()` for more
+      information.
+
+
+
+   .. py:method:: render()
+
+      Render the image from the camera. Will always only return the rgb array.
+
+
+
+   .. py:property:: config
+      :type: MjCambrianEyeConfig
+
+
+      The config for the eye.
+
+
+   .. py:property:: renderer
+      :type: cambrian.renderer.MjCambrianRenderer
+
+
+      The renderer for the eye.
+
+
+   .. py:property:: name
+      :type: str
+
+
+      The name of the eye.
+
+
+   .. py:property:: observation_space
+      :type: gymnasium.spaces.Box
+
+
+      Constructs the observation space for the eye. The observation space is a
+      `spaces.Box` with the shape of the resolution of the eye.
+
+
+   .. py:property:: num_pixels
+      :type: int
+
+
+      The number of pixels in the image.
+
+
+   .. py:property:: prev_obs
+      :type: numpy.ndarray
+
+
+      The last observation returned by `self.render()`.
+
+
+.. py:class:: MjCambrianEyeConfig(content, /, config = None, instantiated = False)
+
+   Bases: :py:obj:`cambrian.utils.config.MjCambrianBaseConfig`
+
+
+   Defines the config for an eye. Used for type hinting.
+
+   :ivar instance: The class instance to use
+                   when creating the eye. Takes the config and the name of the eye as
+                   arguments.
+
+   :vartype instance: Callable[[Self, str], MjCambrianEye]
+   :ivar fov: Independent of the `fovy` field in the MJCF
+              xml. Used to calculate the sensorsize field. Specified in degrees. Mutually
+              exclusive with `fovy`. If `focal` is unset, it is set to 1, 1. Will override
+              `sensorsize`, if set. Fmt: fovx fovy.
+   :vartype fov: Tuple[float, float]
+   :ivar focal: The focal length of the camera.
+                Fmt: focal_x focal_y.
+   :vartype focal: Tuple[float, float]
+   :ivar sensorsize: The size of the sensor. Fmt: width height.
+   :vartype sensorsize: Tuple[float, float]
+   :ivar resolution: The width and height of the rendered image.
+                     Fmt: width height.
+   :vartype resolution: Tuple[int, int]
+   :ivar coord: The x and y coordinates of the eye.
+                This is used to determine the placement of the eye on the agent.
+                Specified in degrees. This attr isn't actually used by eye, but by the
+                agent. The eye has no knowledge of the geometry it's trying to be placed
+                on. Fmt: lat lon
+   :vartype coord: Tuple[float, float]
+   :ivar orthographic: Whether the camera is orthographic
+
+   :vartype orthographic: bool
+   :ivar renderer: The renderer config to use for the
+                   underlying renderer. The width and height of the renderer will be set to the
+                   padded resolution (resolution + int(psf_filter_size/2)) of the eye.
+
+   :vartype renderer: MjCambrianRendererConfig
+
+
+.. py:class:: MjCambrianOpticsEye(config, name)
+
+   Bases: :py:obj:`cambrian.eyes.eye.MjCambrianEye`
+
+
+   This class applies the depth invariant PSF to the image.
+
+   :Parameters: **config** (*MjCambrianOpticsConfig*) -- Config for the optics module.
+
+
+   .. py:method:: render()
+
+      Overwrites the default render method to apply the depth invariant PSF to the
+      image.
+
+
+
+.. py:class:: MjCambrianOpticsEyeConfig(content, /, config = None, instantiated = False)
+
+   Bases: :py:obj:`cambrian.eyes.eye.MjCambrianEyeConfig`
+
+
+   This defines the config for the optics module. This extends the base eye config
+   and adds additional parameters for the optics module.
+
+   :ivar pupil_resolution: Resolution of the pupil plane. This
+                           is used to calculate the PSF.
+
+   :vartype pupil_resolution: Tuple[int, int]
+   :ivar noise_std: Standard deviation of the Gaussian noise to be
+                    added to the image. If 0.0, no noise is added.
+   :vartype noise_std: float
+   :ivar wavelengths: Wavelengths of the RGB channels.
+
+   :vartype wavelengths: Tuple[float, float, float]
+   :ivar f_stop: F-stop of the lens. This is used to calculate the PSF.
+   :vartype f_stop: float
+   :ivar refractive_index: Refractive index of the lens material.
+   :vartype refractive_index: float
+   :ivar height_map: Height map of the lens. This is used to
+                     calculate the phase shift of the light passing through the lens. Uses a
+                     radially symmetric approximation.
+
+   :vartype height_map: List[float]
+   :ivar aperture: Aperture config. This defines the
+                   aperture of the lens. The aperture can be circular or custom.
+
+   :vartype aperture: MjCambrianApertureConfig
+   :ivar depths: Depths at which the PSF is calculated. If empty, the psf
+                 is calculated for each render call; otherwise, the PSFs are precomputed.
+
+   :vartype depths: List[float]
+
+

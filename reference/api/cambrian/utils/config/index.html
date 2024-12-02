@@ -1,0 +1,1073 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../../../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../../../genindex.html" /><link rel="search" title="Search" href="../../../../../search.html" /><link rel="next" title="cambrian.utils.logger" href="../logger/index.html" /><link rel="prev" title="cambrian.utils.cambrian_xml" href="../cambrian_xml/index.html" />
+
+    <link rel="shortcut icon" href="../../../../../_static/eye.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.08.06 -->
+        <title>cambrian.utils.config - cambrian 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=40ab5f34" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     
+        <a style="text-decoration: none; color: white;"
+           href="https://www.media.mit.edu/groups/camera-culture/overview/">
+           <img src="/cc-hardware/_static/cc-transparent.png"
+                style="
+                    vertical-align: middle;
+                    display: inline;
+                    padding-right: 7.5px;
+                    height: 20px;
+                "/>
+           Checkout Camera Culture!
+        </a>
+     
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../../index.html"><div class="brand">cambrian 0.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../../../../_static/eye.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../../../../_static/eye.png" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../setup.html">Setup</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../configuration/index.html">Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Configuration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration/hydra.html">Hydra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration/config.html">Config Composition</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../usage/training.html">Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../usage/visualizing.html">Visualizing the Env</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../envs/done_fns/index.html">cambrian.envs.done_fns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../envs/reward_fns/index.html">cambrian.envs.reward_fns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../envs/step_fns/index.html">cambrian.envs.step_fns</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../agents/agent/index.html">cambrian.agents.agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../agents/object/index.html">cambrian.agents.object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../agents/point/index.html">cambrian.agents.point</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eyes/eye/index.html">cambrian.eyes.eye</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eyes/optics/index.html">cambrian.eyes.optics</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/callbacks/index.html">cambrian.ml.callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/constraint_fns/index.html">cambrian.ml.constraint_fns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/evo/index.html">cambrian.ml.evo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/features_extractors/index.html">cambrian.ml.features_extractors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/fitness_fns/index.html">cambrian.ml.fitness_fns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/model/index.html">cambrian.ml.model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ml/trainer/index.html">cambrian.ml.trainer</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../renderer/overlays/index.html">cambrian.renderer.overlays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../renderer/render_utils/index.html">cambrian.renderer.render_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../renderer/renderer/index.html">cambrian.renderer.renderer</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">cambrian.utils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../cambrian_xml/index.html">cambrian.utils.cambrian_xml</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">cambrian.utils.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../logger/index.html">cambrian.utils.logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/index.html">cambrian.utils.wrappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">cambrian.utils.config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing.html">Contributing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">External Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/ACI/">PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/camera-culture/ACI">Github</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../../../../_sources/reference/api/cambrian/utils/config/index.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="module-cambrian.utils.config">
+<span id="cambrian-utils-config"></span><h1>cambrian.utils.config<a class="headerlink" href="#module-cambrian.utils.config" title="Link to this heading">¶</a></h1>
+<p>This module defines the Cambrian config utilities.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cambrian.utils.config.MjCambrianBaseConfig" title="cambrian.utils.config.MjCambrianBaseConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MjCambrianBaseConfig</span></code></a></p></td>
+<td><p>Base config for all configs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig" title="cambrian.utils.config.MjCambrianContainerConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MjCambrianContainerConfig</span></code></a></p></td>
+<td><p>This is a wrapper around the OmegaConf DictConfig and ListConfig classes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cambrian.utils.config.MjCambrianFlagWrapperMeta" title="cambrian.utils.config.MjCambrianFlagWrapperMeta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MjCambrianFlagWrapperMeta</span></code></a></p></td>
+<td><p>This is a simple metaclass to allow for the use of the | operator to combine</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cambrian.utils.config.build_pattern" title="cambrian.utils.config.build_pattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_pattern</span></code></a>(patterns)</p></td>
+<td><p>Build a glob pattern from the passed patterns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cambrian.utils.config.config_wrapper" title="cambrian.utils.config.config_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_wrapper</span></code></a>([cls])</p></td>
+<td><p>This is a wrapper of the dataclass decorator that adds the class to the hydra</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cambrian.utils.config.instance_flag_wrapper" title="cambrian.utils.config.instance_flag_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instance_flag_wrapper</span></code></a>(*, instance, key[, flag_type, ...])</p></td>
+<td><p>This utility method will wrap a class instance to help with setting class</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cambrian.utils.config.instance_wrapper" title="cambrian.utils.config.instance_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instance_wrapper</span></code></a>(*, instance, **kwargs)</p></td>
+<td><p>This utility method will wrap a class instance to help with setting class</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cambrian.utils.config.run_hydra" title="cambrian.utils.config.run_hydra"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_hydra</span></code></a>([main_fn, parser, config_path, config_name, ...])</p></td>
+<td><p>This function is the main entry point for the hydra application.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianBaseConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MjCambrianBaseConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instantiated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianBaseConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">MjCambrianDictConfig</span></code></p>
+<p>Base config for all configs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class inherits from MjCambrianDictConfig which is a subclass of
+DictConfig. There are issues with inheriting from DictConfig and instantiating
+an instance using the hydra instantiate or omegaconf.to_object methods. So these
+classes aren’t meant to be instantiated, but are used for type hinting and
+validation of the config files.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>custom</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>Any</em><em>, </em><em>str</em><em>]</em><em>]</em>) – Custom data to use. This is useful for
+code-specific logic (i.e. not in yaml files) where you want to store
+data that is not necessarily defined in the config.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MjCambrianContainerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instantiated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig" title="Link to this definition">¶</a></dt>
+<dd><p>This is a wrapper around the OmegaConf DictConfig and ListConfig classes.</p>
+<p>Internally, hydra use OmegaConf to parse yaml/config files. OmegaConf
+uses an internal class DictConfig (and ListConfig for lists) to represent the
+dictionary data types. This is immutable and inheritance isn’t easy, so this class
+allows us to wrap the DictConfig and ListConfig classes to add some additional
+methods. OmegaConf uses functional-style programming, where the OmegaConf class
+provides methods with which you pass a DictConfig or ListConfig instance to.
+Instead, we wrap the DictConfig and ListConfig classes to provide object-oriented
+programming, where we can call methods on the instance itself, as well as
+additional custom methods.</p>
+<p>We’ll keep around two instances of DictConfig or ListConfig: <cite>_config</cite> and
+<cite>_content</cite>. <cite>_config</cite> is the original, uninstantiated config. This is strictly yaml
+and does not include any instantiated objects. <cite>_content</cite> is the instantiated
+config. When getting an attribute, we’ll get the attribute from <cite>_content</cite> and
+return the wrapped instance by this class. <cite>_config</cite> is used to export in a human-
+readable format to a yaml file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>DictConfig | ListConfig</em>) – The instantiated config.</p>
+</dd>
+<dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>config</strong> (<em>Optional</em><em>[</em><em>DictConfig</em><em> | </em><em>ListConfig</em><em>]</em>) – The original, uninstantiated
+config. If unset, will use the content as the config.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.content">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">omegaconf.DictConfig</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">omegaconf.ListConfig</span></em><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.content" title="Link to this definition">¶</a></dt>
+<dd><p>The instantiated config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.instantiate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_container</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">throw_on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_struct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.instantiate" title="Link to this definition">¶</a></dt>
+<dd><p>Instantiate the config using the structured config. Will check for missing
+keys and raise an error if any are missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.instantiate_here">
+<span class="sig-name descname"><span class="pre">instantiate_here</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.instantiate_here" title="Link to this definition">¶</a></dt>
+<dd><p>Instantiate the config using the structured config. Will check for missing
+keys and raise an error if any are missing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.compose">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overrides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_hydra_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.compose" title="Link to this definition">¶</a></dt>
+<dd><p>Compose a config using the Hydra compose API. This will return the config as
+a MjCambrianContainerConfig instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instantiate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">instantiate_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.load" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.load to instantiate the config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pattern</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The specific pattern to select from the loaded
+config.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.load_pickle">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overrides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.load_pickle" title="Link to this definition">¶</a></dt>
+<dd><p>Load a pickled config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instantiate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">instantiate_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.create" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.create to instantiate the config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.resolve">
+<span class="sig-name descname"><span class="pre">resolve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.resolve" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.resolve to resolve the config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.merge_with">
+<span class="sig-name descname"><span class="pre">merge_with</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.merge_with" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.merge to merge the config with another config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.merge_with_dotlist">
+<span class="sig-name descname"><span class="pre">merge_with_dotlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dotlist</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.merge_with_dotlist" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around DictConfig|ListConfig.merge_with_dotlist to merge the config
+with a dotlist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.set_struct">
+<span class="sig-name descname"><span class="pre">set_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_struct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.set_struct" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.set_struct to set the struct flag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.set_readonly">
+<span class="sig-name descname"><span class="pre">set_readonly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_readonly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.set_readonly" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.set_readonly to set the readonly flag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.set_struct_temporarily">
+<span class="sig-name descname"><span class="pre">set_struct_temporarily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_struct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.set_struct_temporarily" title="Link to this definition">¶</a></dt>
+<dd><p>Context manager to temporarily set the struct flag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.set_readonly_temporarily">
+<span class="sig-name descname"><span class="pre">set_readonly_temporarily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_readonly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.set_readonly_temporarily" title="Link to this definition">¶</a></dt>
+<dd><p>Context manager to temporarily set the readonly flag.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_instantiated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.select" title="Link to this definition">¶</a></dt>
+<dd><p>This is a wrapper around OmegaConf.select to select a key from the config.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, this will use the uninstantiated config object to select the
+key. Pass <cite>use_instantiated=True</cite> to use the instantiated config object.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.get_type">
+<span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.get_type" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.get_type to get the type of the config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.get_typename">
+<span class="sig-name descname"><span class="pre">get_typename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.get_typename" title="Link to this definition">¶</a></dt>
+<dd><p>Get’s the type as a string using OmegaConf.get_type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.isinstance">
+<span class="sig-name descname"><span class="pre">isinstance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.isinstance" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.isinstance to check if the config is an instance of
+a type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.to_container">
+<span class="sig-name descname"><span class="pre">to_container</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_instantiated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.to_container" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.to_container to convert the config to a
+dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.to_yaml">
+<span class="sig-name descname"><span class="pre">to_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_instantiated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.to_yaml" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around OmegaConf.to_yaml to convert the config to a yaml string.
+Adds some custom representers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_instantiated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hydra_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.save" title="Link to this definition">¶</a></dt>
+<dd><p>Saves the config to a yaml file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.pickle">
+<span class="sig-name descname"><span class="pre">pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.pickle" title="Link to this definition">¶</a></dt>
+<dd><p>Pickle the config to a file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.glob">
+<span class="sig-name descname"><span class="pre">glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assume_one</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.glob" title="Link to this definition">¶</a></dt>
+<dd><p>This is effectively select, but allows <cite>*</cite> to be used as a wildcard.</p>
+<p>This method works by finding all <cite>*</cite> in the key and then iterating over all
+subsequent keys that match the globbed pattern.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>yaml files aren’t necessarily built to support globbing (like xml), so
+this method is fairly slow and should be used sparingly.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – The key to glob. This is a dotlist key, like <cite>a.b.*</cite>. Multiple
+globs can be used, like <cite>a.*.c.*.d.*</cite>. Globs in keys can be used, as
+well, such as <cite>a.ab*.c</cite></p>
+</dd>
+<dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>flatten</strong> (<em>bool</em>) – If true, the output will be a dict of the leaf keys and
+the accumulated values if there are like leaf keys. If False, the
+output will be a nested dict. Defaults to False.</p></li>
+<li><p><strong>assume_one</strong> (<em>bool</em>) – If True, will assume that there is only one match for
+each glob. If True, will return just the value of the match.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.globbed_eval">
+<span class="sig-name descname"><span class="pre">globbed_eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">patterns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.globbed_eval" title="Link to this definition">¶</a></dt>
+<dd><p>This method will evaluate a specific <cite>src</cite> given globbed patterns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.keys" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper of the keys method to return the keys of the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.values" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper of the values method to return the values of the content as a
+MjCambrianContainerConfig if the item is a OmegaConf config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.items" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper of the items method to return the items of the content as a
+MjCambrianContainrConfig if the item is a OmegaConf config.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.copy" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around the copy method to return a new instance of this class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.clear" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around the clear method to clear the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.update" title="Link to this definition">¶</a></dt>
+<dd><p>Wrapper around the OmegaConf.update method to update the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__contains__" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the key is in the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__getattr__">
+<span class="sig-name descname"><span class="pre">__getattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__getattr__" title="Link to this definition">¶</a></dt>
+<dd><p>Get the attribute from the content and return the wrapped instance. If the
+attribute is a DictConfig or ListConfig, we’ll wrap it in this class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__getitem__" title="Link to this definition">¶</a></dt>
+<dd><p>Get the item from the content and return the wrapped instance. If the item is
+a DictConfig or ListConfig, we’ll wrap it in this class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__setattr__" title="Link to this definition">¶</a></dt>
+<dd><p>Set the attribute in the content. These are fairly slow, but we’ll keep them
+using OmegaConf logic since it does validation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__setitem__" title="Link to this definition">¶</a></dt>
+<dd><p>Set the item in the content. These are fairly slow, but we’ll keep them using
+OmegaConf logic since it does validation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__delattr__" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the attribute from the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__delitem__">
+<span class="sig-name descname"><span class="pre">__delitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__delitem__" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the item from the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__iter__" title="Link to this definition">¶</a></dt>
+<dd><p>Only supported by ListConfig. Wrapper around the __iter__ method to return
+the iterator of the content. Will convert any DictConfig or ListConfig to this
+class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__len__" title="Link to this definition">¶</a></dt>
+<dd><p>Only supported by ListConfig. Wrapper around the __len__ method to return the
+length of the content.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__getstate__">
+<span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__getstate__" title="Link to this definition">¶</a></dt>
+<dd><p>Get the state of the object to pickle it. Will only pickle the config since
+it’s not guaranteed the instances in content can be pickled.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianContainerConfig.__setstate__">
+<span class="sig-name descname"><span class="pre">__setstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianContainerConfig.__setstate__" title="Link to this definition">¶</a></dt>
+<dd><p>Set the state of the object from the pickled state.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianFlagWrapperMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MjCambrianFlagWrapperMeta</span></span><a class="headerlink" href="#cambrian.utils.config.MjCambrianFlagWrapperMeta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.EnumMeta</span></code></p>
+<p>This is a simple metaclass to allow for the use of the | operator to combine
+flags. This means you can simply put <cite>flag1 | flag2</cite> in the yaml file and it will
+be combined into a single flag.</p>
+<p>The following forms are supported and any combination thereof:
+- flag1 | flag2 | flag3 | …
+- flag1|flag2|flag3|…
+- flag1</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cambrian.utils.config.MjCambrianFlagWrapperMeta.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.MjCambrianFlagWrapperMeta.__getitem__" title="Link to this definition">¶</a></dt>
+<dd><p>Return the member matching <cite>name</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cambrian.utils.config.build_pattern">
+<span class="sig-name descname"><span class="pre">build_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.build_pattern" title="Link to this definition">¶</a></dt>
+<dd><p>Build a glob pattern from the passed patterns.</p>
+<p>The underlying method for globbing (<cite>MjCambrianConfig.glob</cite>) uses a regex pattern
+which is parses the dot-separated keys independently.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">build_pattern</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;training_config.seed&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;env_config.agent_configs.*.eye_configs.*.resolution&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;env_config.agent_configs.*.eye_configs.*.fov&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">&#39;(training_config|env_config).(seed|agent_configs).*.eye_configs.*.(resolution|fov)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cambrian.utils.config.config_wrapper">
+<span class="sig-name descname"><span class="pre">config_wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.config_wrapper" title="Link to this definition">¶</a></dt>
+<dd><p>This is a wrapper of the dataclass decorator that adds the class to the hydra
+store.</p>
+<p>The hydra store is used to construct structured configs from the yaml files.</p>
+<p>We’ll also do some preprocessing of the dataclass fields such that all type hints
+are supported by hydra. Hydra only supports a certain subset of types, so we’ll
+convert the types to supported types using the _sanitized_type method from
+hydra_zen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kw</strong> – The kwargs to pass to the dataclass decorator. The following defaults
+are set:
+- repr: False
+- eq: False
+- slots: True
+- kw_only: True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cambrian.utils.config.instance_flag_wrapper">
+<span class="sig-name descname"><span class="pre">instance_flag_wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.instance_flag_wrapper" title="Link to this definition">¶</a></dt>
+<dd><p>This utility method will wrap a class instance to help with setting class
+attributes after initialization. As opposed to instance_wrapper, this method will
+set attribute flags on the instance. This is particularly useful for mujoco enums,
+which are stored in a list.</p>
+<p>This is intended to be called from a yaml config file and to be used in conjunction
+with the instance_wrapper method.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This is super ugly</p>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">obj_to_instantiate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;path_to&gt;.instance_wrapper</span>
+<span class="w">    </span><span class="nt">instance</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;class&gt;</span>
+
+<span class="w">    </span><span class="c1"># these will be set as flags on the instance</span>
+<span class="w">    </span><span class="nt">flags</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;path_to&gt;.instance_flag_wrapper</span>
+<span class="w">        </span><span class="nt">instance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${..instance}</span><span class="w">                   </span><span class="c1"># get the instance</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${parent:}</span><span class="w">                           </span><span class="c1"># gets the parent key; &quot;flags&quot;</span>
+<span class="w">        </span><span class="nt">flag_type</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;class&gt;</span><span class="w">                     </span><span class="c1"># the class of the flag</span>
+
+<span class="w">        </span><span class="c1"># These will be set like:</span>
+<span class="w">        </span><span class="c1"># obj_to_instantiate.key[flag1] = value1</span>
+<span class="w">        </span><span class="c1"># obj_to_instantiate.key[flag2] = value2</span>
+<span class="w">        </span><span class="c1"># ...</span>
+<span class="w">        </span><span class="nt">flag1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="w">        </span><span class="nt">flag2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span>
+<span class="w">        </span><span class="nt">flag3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value3</span>
+</pre></div>
+</div>
+<p>This also works for partial instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instance</strong> (<em>Type[Any]</em>) – The class instance to wrap.</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – The key to set the flags on.</p></li>
+<li><p><strong>flag_type</strong> (<em>Optional[Type[Any]]</em>) – The class of the flag. If unset, will use the
+flag directly.</p></li>
+<li><p><strong>eval_flags</strong> (<em>Optional[bool]</em>) – Whether to evaluate the flags. If True, will
+call eval on the flags. This is helpful if you want to use slices.
+Default: False. NOTE: this is note safe and should be used with caution.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>flags</strong> – The flags to set on the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cambrian.utils.config.instance_wrapper">
+<span class="sig-name descname"><span class="pre">instance_wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.instance_wrapper" title="Link to this definition">¶</a></dt>
+<dd><p>This utility method will wrap a class instance to help with setting class
+attributes after initialization.</p>
+<p>Some classes, for instance, don’t include all attributes in the constructor; this
+method will postpone setting these attributes until after __init__ is called and
+just set the attributes directly with setattr.</p>
+<p>This is intended to be called from a yaml config file like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">obj_to_instantiate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;path_to&gt;.instance_wrapper</span>
+<span class="w">    </span><span class="nt">instance</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;class&gt;</span>
+
+<span class="w">        </span><span class="c1"># these will be passed to the __init__ method</span>
+<span class="w">        </span><span class="nt">_args_</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">arg1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">arg2</span><span class="p p-Indicator">]</span>
+
+<span class="w">        </span><span class="c1"># these will be passed to the __init__ method as kwargs</span>
+<span class="w">        </span><span class="nt">init_arg1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="w">        </span><span class="nt">init_arg2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span>
+
+<span class="w">    </span><span class="c1"># these will be set as attributes after the __init__ method</span>
+<span class="w">    </span><span class="nt">set_arg1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="w">    </span><span class="nt">set_arg2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span>
+</pre></div>
+</div>
+<p>At instantiate time, init args are not always known. As such, you can leverage
+hydras partial instantiation logic, as well. Under the hood, the instance_wrapper
+method will wrap the partial instance created by hydra such that when it’s
+constructor is actually called, the attributes will be set.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">partial_obj_to_instantiate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;path_to&gt;.instance_wrapper</span>
+<span class="w">    </span><span class="nt">instance</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">_target_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;class&gt;</span>
+<span class="w">        </span><span class="nt">_partial_</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+
+<span class="w">        </span><span class="c1"># these will be passed to the __init__ method</span>
+<span class="w">        </span><span class="nt">_args_</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">arg1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">arg2</span><span class="p p-Indicator">]</span>
+
+<span class="w">        </span><span class="c1"># these will be passed to the __init__ method as kwargs</span>
+<span class="w">        </span><span class="nt">init_arg1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="w">        </span><span class="nt">init_arg2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span>
+<span class="w">        </span><span class="nt">init_arg3</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;???&#39;</span><span class="w"> </span><span class="c1"># this is unknown at instantiate time and is set later</span>
+
+<span class="w">    </span><span class="c1"># these will be set as attributes after the __init__ method</span>
+<span class="w">    </span><span class="nt">set_arg1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="w">    </span><span class="nt">set_arg2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instance</strong> (<em>Type[Any]</em>) – The class instance to wrap.</p>
+</dd>
+<dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kwargs</strong> – The attributes to set on the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cambrian.utils.config.run_hydra">
+<span class="sig-name descname"><span class="pre">run_hydra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">lambda</span> <span class="pre">*_,</span> <span class="pre">**__:</span> <span class="pre">...</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">argparse.ArgumentParser()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Path.cwd()</span> <span class="pre">/</span> <span class="pre">'configs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'base'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instantiate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cambrian.utils.config.run_hydra" title="Link to this definition">¶</a></dt>
+<dd><p>This function is the main entry point for the hydra application.</p>
+<p>The benefits of using this setup rather than the compose API is that we can
+use the sweeper and launcher APIs, which are not available in the compose API.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>main_fn</strong> (<em>Callable[[Concatenate[[MjCambrianConfig], …], None]</em>) – The main
+function to be called after the hydra configuration is parsed. It should
+take the config as an argument and kwargs which correspond to the argument
+parser returns. We don’t return the config directly because hydra allows
+multi-run sweeps and it doesn’t make sense to return multiple configs in
+this case.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">MjCambrianConfig</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--verbose&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">run_hydra</span><span class="p">(</span><span class="n">main_fn</span><span class="o">=</span><span class="n">main</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>parser</strong> (<em>argparse.ArgumentParser</em>) – The parser to use for the hydra
+application. If None, a new parser will be created.</p></li>
+<li><p><strong>config_path</strong> (<em>Path</em><em> | </em><em>str</em>) – The path to the config directory. This should be the
+absolute path to the directory containing the config files. By default,
+this is set to the current working directory.</p></li>
+<li><p><strong>config_name</strong> (<em>str</em>) – The name of the config file to use. This should be the
+name of the file without the extension. By default, this is set to
+“base”.</p></li>
+<li><p><strong>instantiate</strong> (<em>bool</em>) – Whether to instantiate the config. If False, create
+will be used.</p></li>
+<li><p><strong>kwargs</strong> – Additional keyword arguments to pass to the instantiate function.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../logger/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">cambrian.utils.logger</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../cambrian_xml/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">cambrian.utils.cambrian_xml</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Camera Culture, MIT Media Lab
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">cambrian.utils.config</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#package-contents">Package Contents</a><ul>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianBaseConfig"><code class="docutils literal notranslate"><span class="pre">MjCambrianBaseConfig</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig</span></code></a><ul>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.content"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.content</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.instantiate"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.instantiate()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.instantiate_here"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.instantiate_here()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.compose"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.compose()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.load"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.load()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.load_pickle"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.load_pickle()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.create"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.create()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.resolve"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.resolve()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.merge_with"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.merge_with()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.merge_with_dotlist"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.merge_with_dotlist()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.set_struct"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.set_struct()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.set_readonly"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.set_readonly()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.set_struct_temporarily"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.set_struct_temporarily()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.set_readonly_temporarily"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.set_readonly_temporarily()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.select"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.select()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.get_type"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.get_type()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.get_typename"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.get_typename()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.isinstance"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.isinstance()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.to_container"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.to_container()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.to_yaml"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.to_yaml()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.save"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.save()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.pickle"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.pickle()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.glob"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.glob()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.globbed_eval"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.globbed_eval()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.keys"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.keys()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.values"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.values()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.items"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.items()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.copy"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.copy()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.clear"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.clear()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.update"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.update()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__contains__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__contains__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__getattr__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__getattr__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__getitem__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__getitem__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__setattr__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__setattr__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__setitem__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__setitem__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__delattr__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__delattr__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__delitem__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__delitem__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__iter__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__iter__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__len__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__len__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__getstate__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__getstate__()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianContainerConfig.__setstate__"><code class="docutils literal notranslate"><span class="pre">MjCambrianContainerConfig.__setstate__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianFlagWrapperMeta"><code class="docutils literal notranslate"><span class="pre">MjCambrianFlagWrapperMeta</span></code></a><ul>
+<li><a class="reference internal" href="#cambrian.utils.config.MjCambrianFlagWrapperMeta.__getitem__"><code class="docutils literal notranslate"><span class="pre">MjCambrianFlagWrapperMeta.__getitem__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cambrian.utils.config.build_pattern"><code class="docutils literal notranslate"><span class="pre">build_pattern()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.config_wrapper"><code class="docutils literal notranslate"><span class="pre">config_wrapper()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.instance_flag_wrapper"><code class="docutils literal notranslate"><span class="pre">instance_flag_wrapper()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.instance_wrapper"><code class="docutils literal notranslate"><span class="pre">instance_wrapper()</span></code></a></li>
+<li><a class="reference internal" href="#cambrian.utils.config.run_hydra"><code class="docutils literal notranslate"><span class="pre">run_hydra()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../../../_static/documentation_options.js?v=7026087e"></script>
+    <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

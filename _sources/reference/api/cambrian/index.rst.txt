@@ -1,0 +1,49 @@
+cambrian
+========
+
+.. py:module:: cambrian
+
+.. autoapi-nested-parse::
+
+   Cambrian package init file.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /reference/api/cambrian/agents/index
+   /reference/api/cambrian/envs/index
+   /reference/api/cambrian/eyes/index
+   /reference/api/cambrian/ml/index
+   /reference/api/cambrian/renderer/index
+   /reference/api/cambrian/utils/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   cambrian.__author__
+   cambrian.__license__
+
+
+Package Contents
+----------------
+
+.. py:data:: __author__
+   :value: 'Camera Culture (a2cc@media.mit.edu)'
+
+
+   Camera Culture (a2cc@media.mit.edu)
+
+.. py:data:: __license__
+   :value: 'BSD3'
+
+
+   BSD3
+

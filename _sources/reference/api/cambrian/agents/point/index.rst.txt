@@ -1,0 +1,163 @@
+cambrian.agents.point
+=====================
+
+.. py:module:: cambrian.agents.point
+
+.. autoapi-nested-parse::
+
+   Point agents.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   cambrian.agents.point.MjCambrianAgentPoint
+   cambrian.agents.point.MjCambrianAgentPointPrey
+   cambrian.agents.point.MjCambrianAgentPointMazeOptimal
+   cambrian.agents.point.MjCambrianAgentPointMazeRandom
+
+
+Module Contents
+---------------
+
+.. py:class:: MjCambrianAgentPoint(config, name)
+
+   Bases: :py:obj:`cambrian.agents.agent.MjCambrianAgent2D`
+
+
+   This is a hardcoded class which implements the agent as actuated by a forward
+   velocity and a rotational position. In mujoco, to the best of my knowledge, all
+   translational joints are actuated in reference to the _global_ frame rather than
+   the local frame. This means a velocity actuator applied along the x-axis will move
+   the agent along the global x-axis rather than the local x-axis. Therefore, the
+   agent will have 3 actuators: two for x and y global velocities and one for
+   rotational position. From the perspective the calling class (i.e. MjCambrianEnv),
+   this agent has two actuators: a forward velocity and a rotational position. We will
+   calculate the global velocities and rotational position from these two "actuators".
+
+   .. todo::
+
+      Will create an issue on mujoco and see if it's possible to implement this in
+      xml.
+
+
+   .. py:method:: apply_action(action)
+
+      This differs from the base implementation as action only has two elements,
+      but the model has three actuators. Calculate the global velocities here.
+
+
+
+   .. py:property:: action_space
+      :type: gymnasium.spaces.Space
+
+
+      Overrides the base implementation to only have two elements.
+
+
+   .. py:property:: speed
+      :type: float
+
+
+      Returns the speed of the agent in the environment.
+
+
+.. py:class:: MjCambrianAgentPointPrey(config, name, *, predators, speed = -0.8)
+
+   Bases: :py:obj:`MjCambrianAgentPoint`
+
+
+   This is an agent which is non-trainable and defines a custom policy which
+   acts as a "prey" in the environment. This agent will attempt to avoid the predator
+   by taking actions that maximize the distance between itself and the predator.
+
+   :keyword predators: The names of the predators in the environment. The
+                       predator states will be determined from this list by querying the env.
+   :kwtype predators: List[str]
+   :keyword speed: The speed of the prey. Default is 1.0. This is constant during
+                   the simulation. Must be between -1 and 1, where -1 is no movement.
+   :kwtype speed: float
+
+
+   .. py:method:: get_action_privileged(env)
+
+      This is where the prey will calculate its action based on the predator
+      states.
+
+
+
+.. py:class:: MjCambrianAgentPointMazeOptimal(config, name, *, target, speed = -0.75, distance_threshold = 2.0, use_optimal_trajectory = False)
+
+   Bases: :py:obj:`MjCambrianAgentPoint`
+
+
+   This is an agent which is non-trainable and defines a custom policy which
+   acts as an optimal agent in the maze environment. This agent will attempt to reach
+   the goal by taking actions that best map to the optimal trajectory which is
+   calculated from the maze using bfs.
+
+
+   .. py:method:: reset(model, data)
+
+      Resets the optimal_trajectory.
+
+
+
+   .. py:method:: get_action_privileged(env)
+
+      This is a deviation from the standard gym API. This method is similar to
+      step, but it has "privileged" access to information such as the environment.
+      This method can be overridden by agents which are not trainable and need to
+      implement custom step logic.
+
+      :Parameters: **env** (*MjCambrianEnv*) -- The environment that the agent is in. This can be
+                   used to get information about the environment.
+
+      :returns: *List[float]* -- The action to take.
+
+
+
+.. py:class:: MjCambrianAgentPointMazeRandom(config, name, *, speed = -0.825, distance_threshold = 4.0, use_optimal_trajectory = True)
+
+   Bases: :py:obj:`MjCambrianAgentPoint`
+
+
+   This is a hardcoded class which implements the agent as actuated by a forward
+   velocity and a rotational position. In mujoco, to the best of my knowledge, all
+   translational joints are actuated in reference to the _global_ frame rather than
+   the local frame. This means a velocity actuator applied along the x-axis will move
+   the agent along the global x-axis rather than the local x-axis. Therefore, the
+   agent will have 3 actuators: two for x and y global velocities and one for
+   rotational position. From the perspective the calling class (i.e. MjCambrianEnv),
+   this agent has two actuators: a forward velocity and a rotational position. We will
+   calculate the global velocities and rotational position from these two "actuators".
+
+   .. todo::
+
+      Will create an issue on mujoco and see if it's possible to implement this in
+      xml.
+
+
+   .. py:method:: reset(model, data)
+
+      Resets the optimal_trajectory.
+
+
+
+   .. py:method:: get_action_privileged(env)
+
+      This is a deviation from the standard gym API. This method is similar to
+      step, but it has "privileged" access to information such as the environment.
+      This method can be overridden by agents which are not trainable and need to
+      implement custom step logic.
+
+      :Parameters: **env** (*MjCambrianEnv*) -- The environment that the agent is in. This can be
+                   used to get information about the environment.
+
+      :returns: *List[float]* -- The action to take.
+
+
+

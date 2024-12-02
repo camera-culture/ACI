@@ -1,0 +1,61 @@
+cambrian.renderer.render_utils
+==============================
+
+.. py:module:: cambrian.renderer.render_utils
+
+.. autoapi-nested-parse::
+
+   Rendering utilities.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   cambrian.renderer.render_utils.resize_with_aspect_fill
+   cambrian.renderer.render_utils.convert_depth_distances
+   cambrian.renderer.render_utils.add_white_border
+
+
+Module Contents
+---------------
+
+.. py:function:: resize_with_aspect_fill(image, width, height, *, border_type = cv2.BORDER_CONSTANT, interp = cv2.INTER_NEAREST)
+
+   Resize the image while maintaining the aspect ratio and filling the rest with
+   black.
+
+   :Parameters: * **image** (*np.ndarray*) -- The image to resize.
+                * **width** (*int*) -- The new width.
+                * **height** (*int*) -- The new height.
+
+   :keyword border_type: The type of border to add. Default is cv2.BORDER_CONSTANT.
+   :kwtype border_type: int
+   :keyword interp: The interpolation method. Default is cv2.INTER_NEAREST.
+   :kwtype interp: int
+
+   :returns: *np.ndarray* -- The resized image.
+
+
+.. py:function:: convert_depth_distances(model, depth)
+
+   Converts depth values from OpenGL to metric depth values.
+
+   :Parameters: * **model** (*mj.MjModel*) -- The model.
+                * **depth** (*np.ndarray*) -- The depth values to convert.
+
+   :returns: *np.ndarray* -- The converted depth values.
+
+   .. note::
+
+      This function is based on
+      [this code](https://github.com/google-deepmind/mujoco/blob/main/            python/mujoco/renderer.py).
+
+
+.. py:function:: add_white_border(image, border_size)
+
+   Add a white border around the image.
+
+

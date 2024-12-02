@@ -1,0 +1,597 @@
+cambrian.utils.config
+=====================
+
+.. py:module:: cambrian.utils.config
+
+.. autoapi-nested-parse::
+
+   This module defines the Cambrian config utilities.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   cambrian.utils.config.MjCambrianBaseConfig
+   cambrian.utils.config.MjCambrianContainerConfig
+   cambrian.utils.config.MjCambrianFlagWrapperMeta
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   cambrian.utils.config.build_pattern
+   cambrian.utils.config.config_wrapper
+   cambrian.utils.config.instance_flag_wrapper
+   cambrian.utils.config.instance_wrapper
+   cambrian.utils.config.run_hydra
+
+
+Package Contents
+----------------
+
+.. py:class:: MjCambrianBaseConfig(content, /, config = None, instantiated = False)
+
+   Bases: :py:obj:`MjCambrianDictConfig`
+
+
+   Base config for all configs.
+
+   .. note::
+
+       This class inherits from MjCambrianDictConfig which is a subclass of
+       DictConfig. There are issues with inheriting from DictConfig and instantiating
+       an instance using the hydra instantiate or omegaconf.to_object methods. So these
+       classes aren't meant to be instantiated, but are used for type hinting and
+       validation of the config files.
+
+   :ivar custom: Custom data to use. This is useful for
+                 code-specific logic (i.e. not in yaml files) where you want to store
+                 data that is not necessarily defined in the config.
+
+   :vartype custom: Optional[Dict[Any, str]]
+
+
+.. py:class:: MjCambrianContainerConfig(content, /, config = None, instantiated = False)
+
+   This is a wrapper around the OmegaConf DictConfig and ListConfig classes.
+
+   Internally, hydra use OmegaConf to parse yaml/config files. OmegaConf
+   uses an internal class DictConfig (and ListConfig for lists) to represent the
+   dictionary data types. This is immutable and inheritance isn't easy, so this class
+   allows us to wrap the DictConfig and ListConfig classes to add some additional
+   methods. OmegaConf uses functional-style programming, where the OmegaConf class
+   provides methods with which you pass a DictConfig or ListConfig instance to.
+   Instead, we wrap the DictConfig and ListConfig classes to provide object-oriented
+   programming, where we can call methods on the instance itself, as well as
+   additional custom methods.
+
+   We'll keep around two instances of DictConfig or ListConfig: `_config` and
+   `_content`. `_config` is the original, uninstantiated config. This is strictly yaml
+   and does not include any instantiated objects. `_content` is the instantiated
+   config. When getting an attribute, we'll get the attribute from `_content` and
+   return the wrapped instance by this class. `_config` is used to export in a human-
+   readable format to a yaml file.
+
+   :Parameters: **content** (*DictConfig | ListConfig*) -- The instantiated config.
+
+   :keyword config: The original, uninstantiated
+                    config. If unset, will use the content as the config.
+   :kwtype config: Optional[DictConfig | ListConfig]
+
+
+   .. py:property:: content
+      :type: omegaconf.DictConfig | omegaconf.ListConfig
+
+
+      The instantiated config.
+
+
+   .. py:method:: instantiate(config, *, as_container = False, resolve = True, throw_on_missing = True, is_struct = True, is_readonly = True, **kwargs)
+      :classmethod:
+
+
+      Instantiate the config using the structured config. Will check for missing
+      keys and raise an error if any are missing.
+
+
+
+   .. py:method:: instantiate_here(**kwargs)
+
+      Instantiate the config using the structured config. Will check for missing
+      keys and raise an error if any are missing.
+
+
+
+   .. py:method:: compose(config_dir, config_name, *, overrides = [], return_hydra_config = False)
+      :classmethod:
+
+
+      Compose a config using the Hydra compose API. This will return the config as
+      a MjCambrianContainerConfig instance.
+
+
+
+   .. py:method:: load(*args, instantiate = True, pattern = None, **instantiate_kwargs)
+      :classmethod:
+
+
+      Wrapper around OmegaConf.load to instantiate the config.
+
+      :keyword pattern: The specific pattern to select from the loaded
+                        config.
+      :kwtype pattern: Optional[str]
+
+
+
+   .. py:method:: load_pickle(path, *, overrides = [])
+      :classmethod:
+
+
+      Load a pickled config.
+
+
+
+   .. py:method:: create(*args, instantiate = True, **instantiate_kwargs)
+      :classmethod:
+
+
+      Wrapper around OmegaConf.create to instantiate the config.
+
+
+
+   .. py:method:: resolve()
+
+      Wrapper around OmegaConf.resolve to resolve the config.
+
+
+
+   .. py:method:: merge_with(*others)
+
+      Wrapper around OmegaConf.merge to merge the config with another config.
+
+
+
+   .. py:method:: merge_with_dotlist(dotlist)
+
+      Wrapper around DictConfig|ListConfig.merge_with_dotlist to merge the config
+      with a dotlist.
+
+
+
+   .. py:method:: set_struct(is_struct)
+
+      Wrapper around OmegaConf.set_struct to set the struct flag.
+
+
+
+   .. py:method:: set_readonly(is_readonly)
+
+      Wrapper around OmegaConf.set_readonly to set the readonly flag.
+
+
+
+   .. py:method:: set_struct_temporarily(is_struct)
+
+      Context manager to temporarily set the struct flag.
+
+
+
+   .. py:method:: set_readonly_temporarily(is_readonly)
+
+      Context manager to temporarily set the readonly flag.
+
+
+
+   .. py:method:: select(key, *, use_instantiated = False, **kwargs)
+
+      This is a wrapper around OmegaConf.select to select a key from the config.
+
+      .. note::
+
+         By default, this will use the uninstantiated config object to select the
+         key. Pass `use_instantiated=True` to use the instantiated config object.
+
+
+
+   .. py:method:: get_type(**kwargs)
+
+      Wrapper around OmegaConf.get_type to get the type of the config.
+
+
+
+   .. py:method:: get_typename(**kwargs)
+
+      Get's the type as a string using OmegaConf.get_type.
+
+
+
+   .. py:method:: isinstance(type_, **kwargs)
+
+      Wrapper around OmegaConf.isinstance to check if the config is an instance of
+      a type.
+
+
+
+   .. py:method:: to_container(*, use_instantiated = True, **kwargs)
+
+      Wrapper around OmegaConf.to_container to convert the config to a
+      dictionary.
+
+
+
+   .. py:method:: to_yaml(use_instantiated = True, resolve = True)
+
+      Wrapper around OmegaConf.to_yaml to convert the config to a yaml string.
+      Adds some custom representers.
+
+
+
+   .. py:method:: save(path, *, header = None, use_instantiated = False, resolve = True, hydra_config = False)
+
+      Saves the config to a yaml file.
+
+
+
+   .. py:method:: pickle(path)
+
+      Pickle the config to a file.
+
+
+
+   .. py:method:: glob(key, *, flatten = False, assume_one = False)
+
+      This is effectively select, but allows `*` to be used as a wildcard.
+
+      This method works by finding all `*` in the key and then iterating over all
+      subsequent keys that match the globbed pattern.
+
+      .. note::
+
+         yaml files aren't necessarily built to support globbing (like xml), so
+         this method is fairly slow and should be used sparingly.
+
+      :Parameters: **key** (*str*) -- The key to glob. This is a dotlist key, like `a.b.*`. Multiple
+                   globs can be used, like `a.*.c.*.d.*`. Globs in keys can be used, as
+                   well, such as `a.ab*.c`
+
+      :keyword flatten: If true, the output will be a dict of the leaf keys and
+                        the accumulated values if there are like leaf keys. If False, the
+                        output will be a nested dict. Defaults to False.
+      :kwtype flatten: bool
+      :keyword assume_one: If True, will assume that there is only one match for
+                           each glob. If True, will return just the value of the match.
+      :kwtype assume_one: bool
+
+
+
+   .. py:method:: globbed_eval(src, *, key = None, **patterns)
+
+      This method will evaluate a specific `src` given globbed patterns.
+
+
+
+   .. py:method:: keys()
+
+      Wrapper of the keys method to return the keys of the content.
+
+
+
+   .. py:method:: values()
+
+      Wrapper of the values method to return the values of the content as a
+      MjCambrianContainerConfig if the item is a OmegaConf config.
+
+
+
+   .. py:method:: items()
+
+      Wrapper of the items method to return the items of the content as a
+      MjCambrianContainrConfig if the item is a OmegaConf config.
+
+
+
+   .. py:method:: copy()
+
+      Wrapper around the copy method to return a new instance of this class.
+
+
+
+   .. py:method:: clear()
+
+      Wrapper around the clear method to clear the content.
+
+
+
+   .. py:method:: update(*args, **kwargs)
+
+      Wrapper around the OmegaConf.update method to update the content.
+
+
+
+   .. py:method:: __contains__(key)
+
+      Check if the key is in the content.
+
+
+
+   .. py:method:: __getattr__(name)
+
+      Get the attribute from the content and return the wrapped instance. If the
+      attribute is a DictConfig or ListConfig, we'll wrap it in this class.
+
+
+
+   .. py:method:: __getitem__(key)
+
+      Get the item from the content and return the wrapped instance. If the item is
+      a DictConfig or ListConfig, we'll wrap it in this class.
+
+
+
+   .. py:method:: __setattr__(name, value)
+
+      Set the attribute in the content. These are fairly slow, but we'll keep them
+      using OmegaConf logic since it does validation.
+
+
+
+   .. py:method:: __setitem__(key, value)
+
+      Set the item in the content. These are fairly slow, but we'll keep them using
+      OmegaConf logic since it does validation.
+
+
+
+   .. py:method:: __delattr__(name)
+
+      Delete the attribute from the content.
+
+
+
+   .. py:method:: __delitem__(key)
+
+      Delete the item from the content.
+
+
+
+   .. py:method:: __iter__()
+
+      Only supported by ListConfig. Wrapper around the __iter__ method to return
+      the iterator of the content. Will convert any DictConfig or ListConfig to this
+      class.
+
+
+
+   .. py:method:: __len__()
+
+      Only supported by ListConfig. Wrapper around the __len__ method to return the
+      length of the content.
+
+
+
+   .. py:method:: __getstate__()
+
+      Get the state of the object to pickle it. Will only pickle the config since
+      it's not guaranteed the instances in content can be pickled.
+
+
+
+   .. py:method:: __setstate__(state)
+
+      Set the state of the object from the pickled state.
+
+
+
+.. py:class:: MjCambrianFlagWrapperMeta
+
+   Bases: :py:obj:`enum.EnumMeta`
+
+
+   This is a simple metaclass to allow for the use of the | operator to combine
+   flags. This means you can simply put `flag1 | flag2` in the yaml file and it will
+   be combined into a single flag.
+
+   The following forms are supported and any combination thereof:
+   - flag1 | flag2 | flag3 | ...
+   - flag1|flag2|flag3|...
+   - flag1
+
+
+   .. py:method:: __getitem__(item)
+
+      Return the member matching `name`.
+
+
+
+.. py:function:: build_pattern(patterns)
+
+   Build a glob pattern from the passed patterns.
+
+   The underlying method for globbing (`MjCambrianConfig.glob`) uses a regex pattern
+   which is parses the dot-separated keys independently.
+
+   .. rubric:: Example
+
+   >>> build_pattern(
+   ...     "training_config.seed",
+   ...     "env_config.agent_configs.*.eye_configs.*.resolution",
+   ...     "env_config.agent_configs.*.eye_configs.*.fov",
+   ... )
+   '(training_config|env_config).(seed|agent_configs).*.eye_configs.*.(resolution|fov)'
+
+
+.. py:function:: config_wrapper(cls=None, /, **kwargs)
+
+   This is a wrapper of the dataclass decorator that adds the class to the hydra
+   store.
+
+   The hydra store is used to construct structured configs from the yaml files.
+
+   We'll also do some preprocessing of the dataclass fields such that all type hints
+   are supported by hydra. Hydra only supports a certain subset of types, so we'll
+   convert the types to supported types using the _sanitized_type method from
+   hydra_zen.
+
+   :keyword kw: The kwargs to pass to the dataclass decorator. The following defaults
+                are set:
+                - repr: False
+                - eq: False
+                - slots: True
+                - kw_only: True
+
+
+.. py:function:: instance_flag_wrapper(*, instance, key, flag_type = None, eval_flags = False, **flags)
+
+   This utility method will wrap a class instance to help with setting class
+   attributes after initialization. As opposed to instance_wrapper, this method will
+   set attribute flags on the instance. This is particularly useful for mujoco enums,
+   which are stored in a list.
+
+   This is intended to be called from a yaml config file and to be used in conjunction
+   with the instance_wrapper method.
+
+   .. todo:: This is super ugly
+
+   .. code-block:: yaml
+
+       obj_to_instantiate:
+           _target_: <path_to>.instance_wrapper
+           instance:
+               _target_: <class>
+
+           # these will be set as flags on the instance
+           flags:
+               _target_: <path_to>.instance_flag_wrapper
+               instance: ${..instance}                   # get the instance
+               key: ${parent:}                           # gets the parent key; "flags"
+               flag_type:
+                   _target_: <class>                     # the class of the flag
+
+               # These will be set like:
+               # obj_to_instantiate.key[flag1] = value1
+               # obj_to_instantiate.key[flag2] = value2
+               # ...
+               flag1: value1
+               flag2: value2
+               flag3: value3
+
+   This also works for partial instances.
+
+   :Parameters: * **instance** (*Type[Any]*) -- The class instance to wrap.
+                * **key** (*str*) -- The key to set the flags on.
+                * **flag_type** (*Optional[Type[Any]]*) -- The class of the flag. If unset, will use the
+                  flag directly.
+                * **eval_flags** (*Optional[bool]*) -- Whether to evaluate the flags. If True, will
+                  call eval on the flags. This is helpful if you want to use slices.
+                  Default: False. NOTE: this is note safe and should be used with caution.
+
+   :keyword flags: The flags to set on the instance.
+
+
+.. py:function:: instance_wrapper(*, instance, **kwargs)
+
+   This utility method will wrap a class instance to help with setting class
+   attributes after initialization.
+
+   Some classes, for instance, don't include all attributes in the constructor; this
+   method will postpone setting these attributes until after __init__ is called and
+   just set the attributes directly with setattr.
+
+   This is intended to be called from a yaml config file like:
+
+   .. code-block:: yaml
+
+       obj_to_instantiate:
+           _target_: <path_to>.instance_wrapper
+           instance:
+               _target_: <class>
+
+               # these will be passed to the __init__ method
+               _args_: [arg1, arg2]
+
+               # these will be passed to the __init__ method as kwargs
+               init_arg1: value1
+               init_arg2: value2
+
+           # these will be set as attributes after the __init__ method
+           set_arg1: value1
+           set_arg2: value2
+
+   At instantiate time, init args are not always known. As such, you can leverage
+   hydras partial instantiation logic, as well. Under the hood, the instance_wrapper
+   method will wrap the partial instance created by hydra such that when it's
+   constructor is actually called, the attributes will be set.
+
+   .. code-block:: yaml
+
+       partial_obj_to_instantiate:
+           _target_: <path_to>.instance_wrapper
+           instance:
+               _target_: <class>
+               _partial_: True
+
+               # these will be passed to the __init__ method
+               _args_: [arg1, arg2]
+
+               # these will be passed to the __init__ method as kwargs
+               init_arg1: value1
+               init_arg2: value2
+               init_arg3: '???' # this is unknown at instantiate time and is set later
+
+           # these will be set as attributes after the __init__ method
+           set_arg1: value1
+           set_arg2: value2
+
+   :Parameters: **instance** (*Type[Any]*) -- The class instance to wrap.
+
+   :keyword kwargs: The attributes to set on the instance.
+
+
+.. py:function:: run_hydra(main_fn = lambda *_, **__: None, /, *, parser = argparse.ArgumentParser(), config_path = Path.cwd() / 'configs', config_name = 'base', instantiate = True, **kwargs)
+
+   This function is the main entry point for the hydra application.
+
+   The benefits of using this setup rather than the compose API is that we can
+   use the sweeper and launcher APIs, which are not available in the compose API.
+
+   :Parameters: **main_fn** (*Callable[[Concatenate[[MjCambrianConfig], ...], None]*) -- The main
+                function to be called after the hydra configuration is parsed. It should
+                take the config as an argument and kwargs which correspond to the argument
+                parser returns. We don't return the config directly because hydra allows
+                multi-run sweeps and it doesn't make sense to return multiple configs in
+                this case.
+
+                Example:
+
+                .. code-block:: python
+
+                    def main(config: MjCambrianConfig, *, verbose: int):
+                        pass
+
+                    parser = argparse.ArgumentParser()
+                    parser.add_argument("--verbose", type=int, default=0)
+
+                    run_hydra(main_fn=main, parser=parser)
+
+   :keyword parser: The parser to use for the hydra
+                    application. If None, a new parser will be created.
+   :kwtype parser: argparse.ArgumentParser
+   :keyword config_path: The path to the config directory. This should be the
+                         absolute path to the directory containing the config files. By default,
+                         this is set to the current working directory.
+   :kwtype config_path: Path | str
+   :keyword config_name: The name of the config file to use. This should be the
+                         name of the file without the extension. By default, this is set to
+                         "base".
+   :kwtype config_name: str
+   :keyword instantiate: Whether to instantiate the config. If False, create
+                         will be used.
+   :kwtype instantiate: bool
+   :keyword kwargs: Additional keyword arguments to pass to the instantiate function.
+
+
