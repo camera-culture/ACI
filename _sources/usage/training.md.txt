@@ -2,7 +2,7 @@
 
 In `scripts/`, there are scripts setup for training. Depending on the system (i.e., cluster, locally, etc.), you may need to run different commands.
 
-## Local
+## Running a single training loop
 
 To run locally, you can use the `local.sh` script. For example, you can run:
 
@@ -22,7 +22,7 @@ Set the `render_modes` to include `'human'` to visualize the env. It will also
 automatically save the video to `logs/<date>/<exp>/eval.*`. Use `-h` to see options.
 ```
 
-## Running on a cluster
+### Running on a cluster
 
 We have provided scripts to run on three clusters: [SuperCloud](https://supercloud.mit.edu), [OpenMind](https://mcgovern.mit.edu/tile/openmind-computing-cluster/), and [Euler](https://euler-cluster.readthedocs.io/en/latest/). Coupled with these scripts are the [Slurm-based launcher configuration](https://hydra.cc/docs/plugins/submitit_launcher/), located at `configs/hydra/launcher/`. When running on a cluster, a daemon job will always be launched to monitor the training process; this is a requirement of hydra and will simply block until the training is complete.
 
@@ -35,6 +35,14 @@ sbatch scripts/supercloud.sh scripts/train.sh exp=<EXPERIMENT>
 
 ```{todo}
 We plan to add AWS support in the future.
+```
+
+### Continue training from a checkpoint
+
+During each training, a `best_model.zip` is saved in the log directory. To load this model and continue training, you can override `trainer/model=loaded_model`. By default, the loader will look at `trainer.model.path` to find the model to load. This will default to `{expdir}/best_model`, so if the day has changed or you've moved the model, you may need to update this path.
+
+```bash
+bash scripts/local.sh scripts/train.sh exp=<EXPERIMENT> trainer/model=loaded_model trainer.model.path=<MODEL_PATH>
 ```
 
 ## Running evolution

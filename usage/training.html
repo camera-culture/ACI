@@ -331,8 +331,8 @@
           <section id="training-an-agent">
 <h1>Training an Agent<a class="headerlink" href="#training-an-agent" title="Link to this heading">¶</a></h1>
 <p>In <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>, there are scripts setup for training. Depending on the system (i.e., cluster, locally, etc.), you may need to run different commands.</p>
-<section id="local">
-<h2>Local<a class="headerlink" href="#local" title="Link to this heading">¶</a></h2>
+<section id="running-a-single-training-loop">
+<h2>Running a single training loop<a class="headerlink" href="#running-a-single-training-loop" title="Link to this heading">¶</a></h2>
 <p>To run locally, you can use the <code class="docutils literal notranslate"><span class="pre">local.sh</span></code> script. For example, you can run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/local.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
 </pre></div>
@@ -349,9 +349,8 @@ and is significantly faster.</p>
 Set the <code class="docutils literal notranslate"><span class="pre">render_modes</span></code> to include <code class="docutils literal notranslate"><span class="pre">'human'</span></code> to visualize the env. It will also
 automatically save the video to <code class="docutils literal notranslate"><span class="pre">logs/&lt;date&gt;/&lt;exp&gt;/eval.*</span></code>. Use <code class="docutils literal notranslate"><span class="pre">-h</span></code> to see options.</p>
 </div>
-</section>
 <section id="running-on-a-cluster">
-<h2>Running on a cluster<a class="headerlink" href="#running-on-a-cluster" title="Link to this heading">¶</a></h2>
+<h3>Running on a cluster<a class="headerlink" href="#running-on-a-cluster" title="Link to this heading">¶</a></h3>
 <p>We have provided scripts to run on three clusters: <a class="reference external" href="https://supercloud.mit.edu">SuperCloud</a>, <a class="reference external" href="https://mcgovern.mit.edu/tile/openmind-computing-cluster/">OpenMind</a>, and <a class="reference external" href="https://euler-cluster.readthedocs.io/en/latest/">Euler</a>. Coupled with these scripts are the <a class="reference external" href="https://hydra.cc/docs/plugins/submitit_launcher/">Slurm-based launcher configuration</a>, located at <code class="docutils literal notranslate"><span class="pre">configs/hydra/launcher/</span></code>. When running on a cluster, a daemon job will always be launched to monitor the training process; this is a requirement of hydra and will simply block until the training is complete.</p>
 <p>To run, you can use the <code class="docutils literal notranslate"><span class="pre">supercloud.sh</span></code>, <code class="docutils literal notranslate"><span class="pre">openmind.sh</span></code>, or <code class="docutils literal notranslate"><span class="pre">euler.sh</span></code> scripts. For example, you can run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note the `sbatch` command is used to submit the job to the cluster using Slurm.</span>
@@ -362,6 +361,14 @@ sbatch<span class="w"> </span>scripts/supercloud.sh<span class="w"> </span>scrip
 <p class="admonition-title">Todo</p>
 <p>We plan to add AWS support in the future.</p>
 </div>
+</section>
+<section id="continue-training-from-a-checkpoint">
+<h3>Continue training from a checkpoint<a class="headerlink" href="#continue-training-from-a-checkpoint" title="Link to this heading">¶</a></h3>
+<p>During each training, a <code class="docutils literal notranslate"><span class="pre">best_model.zip</span></code> is saved in the log directory. To load this model and continue training, you can override <code class="docutils literal notranslate"><span class="pre">trainer/model=loaded_model</span></code>. By default, the loader will look at <code class="docutils literal notranslate"><span class="pre">trainer.model.path</span></code> to find the model to load. This will default to <code class="docutils literal notranslate"><span class="pre">{expdir}/best_model</span></code>, so if the day has changed or you’ve moved the model, you may need to update this path.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/local.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>trainer/model<span class="o">=</span>loaded_model<span class="w"> </span>trainer.model.path<span class="o">=</span>&lt;MODEL_PATH&gt;
+</pre></div>
+</div>
+</section>
 </section>
 <section id="running-evolution">
 <h2>Running evolution<a class="headerlink" href="#running-evolution" title="Link to this heading">¶</a></h2>
@@ -486,8 +493,11 @@ via <code class="docutils literal notranslate"><span class="pre">scripts/evo.sh<
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Training an Agent</a><ul>
-<li><a class="reference internal" href="#local">Local</a></li>
+<li><a class="reference internal" href="#running-a-single-training-loop">Running a single training loop</a><ul>
 <li><a class="reference internal" href="#running-on-a-cluster">Running on a cluster</a></li>
+<li><a class="reference internal" href="#continue-training-from-a-checkpoint">Continue training from a checkpoint</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#running-evolution">Running evolution</a><ul>
 <li><a class="reference internal" href="#resuming-a-failed-evolution">Resuming a failed evolution</a></li>
 </ul>
