@@ -1,2 +1,1 @@
-```{include} ../../examples/detection/README.md
-```
+# Detection Task
