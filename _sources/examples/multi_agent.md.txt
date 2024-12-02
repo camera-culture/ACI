@@ -22,7 +22,7 @@ The config is provided below. The task itself is just the detection task, but wi
 
 ## Example
 
-```{video} /cc-hardware/_static/videos/multi_agent.mp4
+```{video} /ACI/_static/videos/multi_agent.mp4
 :loop:
 :autoplay:
 :muted:
