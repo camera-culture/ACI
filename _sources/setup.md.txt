@@ -38,11 +38,13 @@ pip install -e .
 
 ```{eval-rst}
 
-The package was actually designed to be used with poetry, and is required when [contributing](./contributing.md) to the project. To install poetry, you can do the following:
+.. note::
 
-.. code-block:: bash
+    The package was actually designed to be used with poetry, and is required when `contributing <./contributing.html>`_ to the project. To install poetry, you can do the following:
 
-    pip install poetry
-    poetry install
+    .. code-block:: bash
+
+        pip install poetry
+        poetry install
 
 ```

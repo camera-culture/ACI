@@ -23,7 +23,9 @@ git clone https://github.com/camera-culture/ACI.git && cd ACI
 A symbolic link or symlink is a file that references another. The advantages of symlinks is that a folder or file can _essentially_ be placed in two separate locations. In reference to this repository, we want to create a symlinked install because when we edit the code within the cloned repo, we want that change also to be reflected in the installed files.
 
 ```bash
-pip install -e .
+# You need the dev requirements to build the documentation
+pip install poetry
+poetry install --with dev
 ```
 
 ### Deploy your Changes
@@ -120,8 +122,10 @@ Markdown files are converted to reStructuredText by `myst_parser` which is used 
 There are multiple ways to build sphinx documentation. The easiest is using the `Makefile` or `make.bat` file provided directly in this repository. You will need to install all the necessary dependencies and build the html pages. To do that, run the following commands:
 
 ```bash
-cd ACI/docs
-pip install -r requirements.txt
+cd ACI
+poetry install --with docs # Install the necessary dependencies
+
+cd docs
 make clean html
 ```
 

@@ -348,7 +348,9 @@
 <section id="installing-a-symbolic-linked-version-for-testing">
 <h3>Installing a Symbolic Linked Version for Testing<a class="headerlink" href="#installing-a-symbolic-linked-version-for-testing" title="Link to this heading">¶</a></h3>
 <p>A symbolic link or symlink is a file that references another. The advantages of symlinks is that a folder or file can <em>essentially</em> be placed in two separate locations. In reference to this repository, we want to create a symlinked install because when we edit the code within the cloned repo, we want that change also to be reflected in the installed files.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># You need the dev requirements to build the documentation</span>
+pip<span class="w"> </span>install<span class="w"> </span>poetry
+poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>dev
 </pre></div>
 </div>
 </section>
@@ -439,8 +441,10 @@
 <section id="building-the-documentation">
 <h2>Building the Documentation<a class="headerlink" href="#building-the-documentation" title="Link to this heading">¶</a></h2>
 <p>There are multiple ways to build sphinx documentation. The easiest is using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> or <code class="docutils literal notranslate"><span class="pre">make.bat</span></code> file provided directly in this repository. You will need to install all the necessary dependencies and build the html pages. To do that, run the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ACI/docs
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ACI
+poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>docs<span class="w"> </span><span class="c1"># Install the necessary dependencies</span>
+
+<span class="nb">cd</span><span class="w"> </span>docs
 make<span class="w"> </span>clean<span class="w"> </span>html
 </pre></div>
 </div>
