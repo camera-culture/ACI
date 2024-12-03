@@ -58,13 +58,6 @@ Module Contents
       Overrides the base implementation to only have two elements.
 
 
-   .. py:property:: speed
-      :type: float
-
-
-      Returns the speed of the agent in the environment.
-
-
 .. py:class:: MjCambrianAgentPointPrey(config, name, *, predators, speed = -0.8)
 
    Bases: :py:obj:`MjCambrianAgentPoint`

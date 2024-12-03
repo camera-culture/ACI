@@ -2,7 +2,16 @@
 <html class="no-js" lang="en" data-content_root="../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+    <meta name="color-scheme" content="light dark">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB8Y1XJVV1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TB8Y1XJVV1');
+    </script>
+    <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
     <link rel="shortcut icon" href="../../../_static/eye.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.08.06 -->
         <title>cambrian.agents.agent - cambrian 0.0.0 documentation</title>
@@ -221,41 +230,36 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../setup.html">Setup</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../usage/configuration/index.html">Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Configuration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration/hydra.html">Hydra</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../usage/configuration/config.html">Configuration</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../usage/configuration.html">Configuring an Experiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../usage/training.html">Training an Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../usage/visualizing.html">Visualizing the Env</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/detection.html">Detection Task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/multi_agent.html">Implementing a Multi-Agent Task</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../reference/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/envs/done_fns/index.html">cambrian.envs.done_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/envs/reward_fns/index.html">cambrian.envs.reward_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/envs/step_fns/index.html">cambrian.envs.step_fns</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/agents/agent/index.html">cambrian.agents.agent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/agents/object/index.html">cambrian.agents.object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/agents/point/index.html">cambrian.agents.point</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/eyes/eye/index.html">cambrian.eyes.eye</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/eyes/optics/index.html">cambrian.eyes.optics</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/ml/callbacks/index.html">cambrian.ml.callbacks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/ml/constraint_fns/index.html">cambrian.ml.constraint_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/ml/evo/index.html">cambrian.ml.evo</a></li>
@@ -265,13 +269,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/ml/trainer/index.html">cambrian.ml.trainer</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/renderer/overlays/index.html">cambrian.renderer.overlays</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/renderer/render_utils/index.html">cambrian.renderer.render_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/renderer/renderer/index.html">cambrian.renderer.renderer</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/utils/index.html">cambrian.utils</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../reference/api/cambrian/utils/index.html">cambrian.utils</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/utils/cambrian_xml/index.html">cambrian.utils.cambrian_xml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/utils/config/index.html">cambrian.utils.config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../reference/api/cambrian/utils/logger/index.html">cambrian.utils.logger</a></li>
@@ -324,25 +328,22 @@
           <h1>Source code for cambrian.agents.agent</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Defines agent classes.&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Self</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Self</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span> <span class="nn">mujoco</span> <span class="k">as</span> <span class="nn">mj</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">gymnasium</span> <span class="kn">import</span> <span class="n">spaces</span>
 
 <span class="kn">from</span> <span class="nn">cambrian.eyes.eye</span> <span class="kn">import</span> <span class="n">MjCambrianEye</span><span class="p">,</span> <span class="n">MjCambrianEyeConfig</span>
-<span class="kn">from</span> <span class="nn">cambrian.renderer.render_utils</span> <span class="kn">import</span> <span class="n">add_white_border</span>
 <span class="kn">from</span> <span class="nn">cambrian.utils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">MjCambrianActuator</span><span class="p">,</span>
     <span class="n">MjCambrianGeometry</span><span class="p">,</span>
     <span class="n">MjCambrianJoint</span><span class="p">,</span>
-    <span class="n">generate_sequence_from_range</span><span class="p">,</span>
     <span class="n">get_body_id</span><span class="p">,</span>
     <span class="n">get_geom_id</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">cambrian.utils.cambrian_xml</span> <span class="kn">import</span> <span class="n">MjCambrianXML</span><span class="p">,</span> <span class="n">MjCambrianXMLConfig</span>
 <span class="kn">from</span> <span class="nn">cambrian.utils.config</span> <span class="kn">import</span> <span class="n">MjCambrianBaseConfig</span><span class="p">,</span> <span class="n">config_wrapper</span>
-<span class="kn">from</span> <span class="nn">cambrian.utils.logger</span> <span class="kn">import</span> <span class="n">get_logger</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">cambrian.envs</span> <span class="kn">import</span> <span class="n">MjCambrianEnv</span>
@@ -403,22 +404,6 @@
 <span class="sd">            is True, then the contacts will be included in the observation space of the</span>
 <span class="sd">            agent.</span>
 
-<span class="sd">        eyes_lat_range (Optional[Tuple[float, float]]): The x range of the eye. This is</span>
-<span class="sd">            used to determine the placement of the eye on the agent. Specified in</span>
-<span class="sd">            degrees. This is the latitudinal/vertical range of the evenly placed eye</span>
-<span class="sd">            about the agent&#39;s bounding sphere.</span>
-<span class="sd">        eyes_lon_range (Optional[Tuple[float, float]]): The y range of the eye. This is</span>
-<span class="sd">            used to determine the placement of the eye on the agent. Specified in</span>
-<span class="sd">            degrees. This is the longitudinal/horizontal range of the evenly placed eye</span>
-<span class="sd">            about the agent&#39;s bounding sphere.</span>
-<span class="sd">        num_eyes_to_generate (Optional[Tuple[int, int]]): The num of eyes to generate.</span>
-<span class="sd">            If this is specified, then the eyes will be generated on a spherical</span>
-<span class="sd">            grid. The first element is the number of eyes to generate latitudinally and</span>
-<span class="sd">            the second element is the number of eyes to generate longitudinally. The</span>
-<span class="sd">            eyes will be named sequentially starting from `eye_0`. Each eye will default</span>
-<span class="sd">            to use the first eye config in the `eyes` attribute. `eyes` must have a</span>
-<span class="sd">            length of 1 if this is specified. Each eye is named `eye_{lat}_{lon}` where</span>
-<span class="sd">            `lat` is the latitude index and `lon` is the longitude index.</span>
 <span class="sd">        eyes (Dict[str, MjCambrianEyeConfig]): The eyes on the agent. The keys are the</span>
 <span class="sd">            names of the eyes and the values are the configs for the eyes. The eyes will</span>
 <span class="sd">            be placed on the agent at the specified coordinates.</span>
@@ -444,9 +429,6 @@
     <span class="n">use_action_obs</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="n">use_contact_obs</span><span class="p">:</span> <span class="nb">bool</span>
 
-    <span class="n">eyes_lat_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">eyes_lon_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">num_eyes_to_generate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">eyes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">MjCambrianEyeConfig</span><span class="p">]</span></div>
 
 
@@ -477,7 +459,6 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">MjCambrianAgentConfig</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">MjCambrianEye</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -607,32 +588,7 @@
     <span class="k">def</span> <span class="nf">_place_eyes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Place the eyes on the agent.&quot;&quot;&quot;</span>
 
-        <span class="n">eye_configs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">MjCambrianEyeConfig</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">if</span> <span class="n">num_eyes</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">num_eyes_to_generate</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_eyes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;num_eyes should be a tuple of length 2.&quot;</span>
-            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Only one eye should be specified.&quot;</span>
-            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes_lat_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes_lon_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-
-            <span class="n">base_eye_name</span><span class="p">,</span> <span class="n">base_eye_config</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
-
-            <span class="c1"># Place the eyes uniformly on a spherical grid. The number of latitude and</span>
-            <span class="c1"># longitudinally bins is defined by the two attributes in `eyes`,</span>
-            <span class="c1"># respectively.</span>
-            <span class="n">nlat</span><span class="p">,</span> <span class="n">nlon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">num_eyes_to_generate</span>
-            <span class="n">lat_bins</span> <span class="o">=</span> <span class="n">generate_sequence_from_range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes_lat_range</span><span class="p">,</span> <span class="n">nlat</span><span class="p">)</span>
-            <span class="n">lon_bins</span> <span class="o">=</span> <span class="n">generate_sequence_from_range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes_lon_range</span><span class="p">,</span> <span class="n">nlon</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">lat_idx</span><span class="p">,</span> <span class="n">lat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lat_bins</span><span class="p">):</span>
-                <span class="k">for</span> <span class="n">lon_idx</span><span class="p">,</span> <span class="n">lon</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lon_bins</span><span class="p">):</span>
-                    <span class="n">eye_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_eye_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">lat_idx</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">lon_idx</span><span class="si">}</span><span class="s2">&quot;</span>
-                    <span class="n">eye_config</span> <span class="o">=</span> <span class="n">base_eye_config</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                    <span class="k">with</span> <span class="n">eye_config</span><span class="o">.</span><span class="n">set_readonly_temporarily</span><span class="p">(</span><span class="kc">False</span><span class="p">):</span>
-                        <span class="n">eye_config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;coord&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">])</span>
-                    <span class="n">eye_configs</span><span class="p">[</span><span class="n">eye_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye_config</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">eye_configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes</span>
-
-        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">eye_config</span> <span class="ow">in</span> <span class="n">eye_configs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">eye_config</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye_config</span><span class="o">.</span><span class="n">instance</span><span class="p">(</span><span class="n">eye_config</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MjCambrianAgent.generate_xml">
@@ -721,7 +677,11 @@
 
         <span class="n">obs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">eye</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">obs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">eye_obs</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">eye_obs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">obs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">eye_obs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">obs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye_obs</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_obs</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span></div>
 
@@ -762,7 +722,11 @@
 
         <span class="n">obs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">eye</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">obs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">eye_obs</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">eye_obs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">obs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">eye_obs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">obs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye_obs</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_obs</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span></div>
 
@@ -776,62 +740,15 @@
 
         <span class="k">return</span> <span class="n">obs</span>
 
-<div class="viewcode-block" id="MjCambrianAgent.create_composite_image">
-<a class="viewcode-back" href="../../../reference/api/cambrian/agents/index.html#cambrian.agents.agent.MjCambrianAgent.create_composite_image">[docs]</a>
-    <span class="k">def</span> <span class="nf">create_composite_image</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates a composite image from the eyes. If there are no eyes, then this</span>
-<span class="sd">        returns None.</span>
-
-<span class="sd">        Will appear as a compound eye. For example, if we have a 3x3 grid of eyes:</span>
-<span class="sd">            TL T TR</span>
-<span class="sd">            ML M MR</span>
-<span class="sd">            BL B BR</span>
-
-<span class="sd">        Each eye has a white border around it.</span>
+<div class="viewcode-block" id="MjCambrianAgent.render">
+<a class="viewcode-back" href="../../../reference/api/cambrian/agents/index.html#cambrian.agents.agent.MjCambrianAgent.render">[docs]</a>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the eyes and returns the debug image.</span>
+<span class="sd">        </span>
+<span class="sd">        We don&#39;t know where the eyes are placed, so for simplicity, we&#39;ll just return</span>
+<span class="sd">        the first eye&#39;s render.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_eyes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span>
-
-        <span class="kn">from</span> <span class="nn">cambrian.renderer</span> <span class="kn">import</span> <span class="n">resize_with_aspect_fill</span>
-
-        <span class="n">max_res</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="nb">max</span><span class="p">([</span><span class="n">eye</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">eye</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">values</span><span class="p">()]),</span>
-            <span class="nb">max</span><span class="p">([</span><span class="n">eye</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">eye</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">values</span><span class="p">()]),</span>
-        <span class="p">)</span>
-
-        <span class="c1"># Sort the eyes based on their lat/lon</span>
-        <span class="n">images</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">eye</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-            <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">coord</span>
-            <span class="k">if</span> <span class="n">lat</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
-                <span class="n">images</span><span class="p">[</span><span class="n">lat</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="k">assert</span> <span class="n">lon</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">images</span><span class="p">[</span><span class="n">lat</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;Duplicate eye at </span><span class="si">{</span><span class="n">lat</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s2">.&quot;</span>
-
-            <span class="c1"># Add the image to the dictionary</span>
-            <span class="n">min_dim</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">eye</span><span class="o">.</span><span class="n">prev_obs</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
-            <span class="n">obs</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">prev_obs</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">min_dim</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-                <span class="n">obs</span> <span class="o">=</span> <span class="n">add_white_border</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">min_dim</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
-            <span class="n">images</span><span class="p">[</span><span class="n">lat</span><span class="p">][</span><span class="n">lon</span><span class="p">]</span> <span class="o">=</span> <span class="n">obs</span>
-
-        <span class="c1"># Construct the composite image</span>
-        <span class="c1"># Loop through the sorted list of images based on lat/lon</span>
-        <span class="n">composite</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">lat</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">images</span><span class="o">.</span><span class="n">keys</span><span class="p">())[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">lon</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">lat</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resize_with_aspect_fill</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">lat</span><span class="p">][</span><span class="n">lon</span><span class="p">],</span> <span class="o">*</span><span class="n">max_res</span><span class="p">))</span>
-            <span class="n">composite</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
-        <span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">composite</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">composite</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;agent `</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">` observations. &quot;</span>
-                <span class="s2">&quot;Maybe you forgot to call `render`?.&quot;</span>
-            <span class="p">)</span>
-            <span class="k">return</span> <span class="kc">None</span>
-
-        <span class="k">return</span> <span class="n">composite</span></div>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span><span class="o">.</span><span class="n">render</span><span class="p">()</span></div>
 
 
     <span class="nd">@property</span>
@@ -880,7 +797,10 @@
         <span class="n">observation_space</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Space</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">eye</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">observation_space</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">observation_space</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">eye</span><span class="o">.</span><span class="n">observation_space</span><span class="p">,</span> <span class="n">spaces</span><span class="o">.</span><span class="n">Dict</span><span class="p">):</span>
+                <span class="n">observation_space</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">eye</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">spaces</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">observation_space</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eye</span><span class="o">.</span><span class="n">observation_space</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">use_action_obs</span><span class="p">:</span>
             <span class="n">observation_space</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span>
@@ -1057,22 +977,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">qpos</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
             <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">rbound</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_qposadrs</span><span class="p">)</span>
         <span class="p">)</span></div>
-
-
-    <span class="nd">@property</span>
-<div class="viewcode-block" id="MjCambrianAgent.mat">
-<a class="viewcode-back" href="../../../reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.mat">[docs]</a>
-    <span class="k">def</span> <span class="nf">mat</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the rotation matrix of the agent in the environment.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">xmat</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_body_id</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
-
-
-    <span class="nd">@property</span>
-<div class="viewcode-block" id="MjCambrianAgent.speed">
-<a class="viewcode-back" href="../../../reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.speed">[docs]</a>
-    <span class="k">def</span> <span class="nf">speed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the speed of the agent in the environment.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">qvel</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_qposadrs</span><span class="p">])</span></div>
 
 
     <span class="nd">@property</span>

@@ -3,7 +3,16 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Visualizing the Env" href="visualizing.html" /><link rel="prev" title="Configuration" href="configuration/config.html" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB8Y1XJVV1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TB8Y1XJVV1');
+    </script>
+    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Visualizing the Env" href="visualizing.html" /><link rel="prev" title="Configuring an Experiment" href="configuration.html" />
 
     <link rel="shortcut icon" href="../_static/eye.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.08.06 -->
         <title>Training an Agent - cambrian 0.0.0 documentation</title>
@@ -222,41 +231,36 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="configuration/index.html">Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Configuration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuration/hydra.html">Hydra</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuration/config.html">Configuration</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring an Experiment</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Training an Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualizing.html">Visualizing the Env</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/detection.html">Detection Task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/multi_agent.html">Implementing a Multi-Agent Task</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/envs/done_fns/index.html">cambrian.envs.done_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/envs/reward_fns/index.html">cambrian.envs.reward_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/envs/step_fns/index.html">cambrian.envs.step_fns</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/agents/agent/index.html">cambrian.agents.agent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/agents/object/index.html">cambrian.agents.object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/agents/point/index.html">cambrian.agents.point</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/eyes/eye/index.html">cambrian.eyes.eye</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/eyes/optics/index.html">cambrian.eyes.optics</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/ml/callbacks/index.html">cambrian.ml.callbacks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/ml/constraint_fns/index.html">cambrian.ml.constraint_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/ml/evo/index.html">cambrian.ml.evo</a></li>
@@ -266,13 +270,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/ml/trainer/index.html">cambrian.ml.trainer</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/renderer/overlays/index.html">cambrian.renderer.overlays</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/renderer/render_utils/index.html">cambrian.renderer.render_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/renderer/renderer/index.html">cambrian.renderer.renderer</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/utils/index.html">cambrian.utils</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reference/api/cambrian/utils/index.html">cambrian.utils</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/utils/cambrian_xml/index.html">cambrian.utils.cambrian_xml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/utils/config/index.html">cambrian.utils.config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/api/cambrian/utils/logger/index.html">cambrian.utils.logger</a></li>
@@ -330,31 +334,59 @@
         <article role="main" id="furo-main-content">
           <section id="training-an-agent">
 <h1>Training an Agent<a class="headerlink" href="#training-an-agent" title="Link to this heading">¶</a></h1>
-<p>In <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>, there are scripts setup for training. Depending on the system (i.e., cluster, locally, etc.), you may need to run different commands.</p>
+<p><a class="reference external" href="https://hydra.cc/">Hydra</a> is powerful in the sense that it provides different methods for sweeping parameters and launching jobs. Common use cases are doing a grid search over hyperparameters while launching these jobs on a cluster or running locally.</p>
 <section id="running-a-single-training-loop">
 <h2>Running a single training loop<a class="headerlink" href="#running-a-single-training-loop" title="Link to this heading">¶</a></h2>
-<p>To run locally, you can use the <code class="docutils literal notranslate"><span class="pre">local.sh</span></code> script. For example, you can run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/local.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
+<p>To run locally, you can use the <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script. For example, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">run.sh</span></code> isn’t actually necessary, it just sets some default environment variables and is helpful as it’s the same entrypoint for running on a cluster. You can also run the above command directly with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">cambrian/ml/trainer.py</span> <span class="pre">...</span></code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">local.sh</span></code> script will automatically set <code class="docutils literal notranslate"><span class="pre">MUJOCO_GL=egl</span></code>. Training should always
-be done with <code class="docutils literal notranslate"><span class="pre">MUJOCO_GL=egl</span></code> cause that runs with a headless implementation of OpenGL
-and is significantly faster.</p>
+<p>When invoked with bash, <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script will default to setting <code class="docutils literal notranslate"><span class="pre">MUJOCO_GL=egl</span></code>. Training should always be done with <code class="docutils literal notranslate"><span class="pre">MUJOCO_GL=egl</span></code> cause that runs with a headless implementation of OpenGL and is significantly faster.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can also run <code class="docutils literal notranslate"><span class="pre">eval.sh</span></code> to run evaluation to visualize the env.
-Set the <code class="docutils literal notranslate"><span class="pre">render_modes</span></code> to include <code class="docutils literal notranslate"><span class="pre">'human'</span></code> to visualize the env. It will also
-automatically save the video to <code class="docutils literal notranslate"><span class="pre">logs/&lt;date&gt;/&lt;exp&gt;/eval.*</span></code>. Use <code class="docutils literal notranslate"><span class="pre">-h</span></code> to see options.</p>
+<p>You can also run <code class="docutils literal notranslate"><span class="pre">--eval</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--train</span></code> to run evaluation to visualize the env. Set the <code class="docutils literal notranslate"><span class="pre">render_modes</span></code> to include <code class="docutils literal notranslate"><span class="pre">'human'</span></code> to visualize the env. It will also automatically save the video to <code class="docutils literal notranslate"><span class="pre">logs/&lt;date&gt;/&lt;exp&gt;/eval.*</span></code>. Use <code class="docutils literal notranslate"><span class="pre">-h</span></code> to see options.</p>
 </div>
 <section id="running-on-a-cluster">
 <h3>Running on a cluster<a class="headerlink" href="#running-on-a-cluster" title="Link to this heading">¶</a></h3>
 <p>We have provided scripts to run on three clusters: <a class="reference external" href="https://supercloud.mit.edu">SuperCloud</a>, <a class="reference external" href="https://mcgovern.mit.edu/tile/openmind-computing-cluster/">OpenMind</a>, and <a class="reference external" href="https://euler-cluster.readthedocs.io/en/latest/">Euler</a>. Coupled with these scripts are the <a class="reference external" href="https://hydra.cc/docs/plugins/submitit_launcher/">Slurm-based launcher configuration</a>, located at <code class="docutils literal notranslate"><span class="pre">configs/hydra/launcher/</span></code>. When running on a cluster, a daemon job will always be launched to monitor the training process; this is a requirement of hydra and will simply block until the training is complete.</p>
-<p>To run, you can use the <code class="docutils literal notranslate"><span class="pre">supercloud.sh</span></code>, <code class="docutils literal notranslate"><span class="pre">openmind.sh</span></code>, or <code class="docutils literal notranslate"><span class="pre">euler.sh</span></code> scripts. For example, you can run:</p>
+<p>To run, you can still use the <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script, which has some default Slurm configs set.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">run.sh</span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --time=4-00:00:00</span>
+<span class="c1">#SBATCH --job-name cambrian</span>
+<span class="c1">#SBATCH --output=out/R-%x.%j_%a.out</span>
+<span class="c1">#SBATCH --error=out/R-%x.%j_%a.err</span>
+
+<span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Please provide the script&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="m">0</span><span class="o">)</span>
+<span class="nv">SCRIPT</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nb">shift</span>
+
+<span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;python </span><span class="nv">$SCRIPT</span><span class="s2"> </span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running command: </span><span class="nv">$cmd</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>/dev/stderr
+<span class="nb">eval</span><span class="w"> </span><span class="nv">$cmd</span>
+</pre></div>
+</div>
+</div>
+<p>For example, you can run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note the `sbatch` command is used to submit the job to the cluster using Slurm.</span>
-sbatch<span class="w"> </span>scripts/supercloud.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
+<span class="c1"># You can change `supercloud` to `openmind`, `euler`, or a custom launcher depending on the cluster.</span>
+sbatch<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span>hydra/launcher<span class="o">=</span>supercloud<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
+</pre></div>
+</div>
+<p>You can then add additional Slurm configuration variables directly to the above command. For example, to set the partition and qos, you can run the following. Note that this only sets the qos/partition on the daemon job, not the training job. The second command demonstrates how to set the partition and qos for the training job within the launcher config.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the partition and qos for the daemon job</span>
+sbatch<span class="w"> </span>scripts/run.sh<span class="w"> </span>--partition<span class="o">=</span>&lt;PARTITION&gt;<span class="w"> </span>--qos<span class="o">=</span>&lt;QOS&gt;<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span>hydra/launcher<span class="o">=</span>supercloud<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
+
+<span class="c1"># Set the partition and qos for the training job</span>
+sbatch<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span>hydra/launcher<span class="o">=</span>supercloud<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>hydra.launcher.partition<span class="o">=</span>&lt;PARTITION&gt;<span class="w"> </span>hydra.launcher.qos<span class="o">=</span>&lt;QOS&gt;
 </pre></div>
 </div>
 <div class="admonition-todo admonition" id="id1">
@@ -365,19 +397,38 @@ sbatch<span class="w"> </span>scripts/supercloud.sh<span class="w"> </span>scrip
 <section id="continue-training-from-a-checkpoint">
 <h3>Continue training from a checkpoint<a class="headerlink" href="#continue-training-from-a-checkpoint" title="Link to this heading">¶</a></h3>
 <p>During each training, a <code class="docutils literal notranslate"><span class="pre">best_model.zip</span></code> is saved in the log directory. To load this model and continue training, you can override <code class="docutils literal notranslate"><span class="pre">trainer/model=loaded_model</span></code>. By default, the loader will look at <code class="docutils literal notranslate"><span class="pre">trainer.model.path</span></code> to find the model to load. This will default to <code class="docutils literal notranslate"><span class="pre">{expdir}/best_model</span></code>, so if the day has changed or you’ve moved the model, you may need to update this path.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/local.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>trainer/model<span class="o">=</span>loaded_model<span class="w"> </span>trainer.model.path<span class="o">=</span>&lt;MODEL_PATH&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>trainer/model<span class="o">=</span>loaded_model<span class="w"> </span>trainer.model.path<span class="o">=</span>&lt;MODEL_PATH&gt;
 </pre></div>
 </div>
 </section>
 </section>
 <section id="running-evolution">
 <h2>Running evolution<a class="headerlink" href="#running-evolution" title="Link to this heading">¶</a></h2>
-<p>In the above examples, we are simply running a single training loop. If you want to run an evolutionary experiment, you can use the <code class="docutils literal notranslate"><span class="pre">evo.sh</span></code> script. For example, you can run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/local.sh<span class="w"> </span>scripts/evo.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;
+<p>In the above examples, we are simply running a single training loop. If you want to run an evolutionary experiment, you can set <code class="docutils literal notranslate"><span class="pre">evo=evo</span></code>. For example, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span><span class="nv">evo</span><span class="o">=</span>evo<span class="w"> </span>--multirun
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">local.sh</span></code> can be replaced with <code class="docutils literal notranslate"><span class="pre">supercloud.sh</span></code>, <code class="docutils literal notranslate"><span class="pre">openmind.sh</span></code>, or <code class="docutils literal notranslate"><span class="pre">euler.sh</span></code> depending on the cluster you are using (remember to use <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> in this case). The evolution loop utilizes the <a class="reference external" href="https://hydra.cc/docs/plugins/nevergrad_sweeper/"><code class="docutils literal notranslate"><span class="pre">nevergrad</span></code> sweeper</a>, and it’s configs are located at <code class="docutils literal notranslate"><span class="pre">configs/hydra/sweeper/</span></code>.</p>
+<p>The evolution loop utilizes the <a class="reference external" href="https://hydra.cc/docs/plugins/nevergrad_sweeper/"><code class="docutils literal notranslate"><span class="pre">nevergrad</span></code> sweeper</a>, and it’s configs are located at <code class="docutils literal notranslate"><span class="pre">configs/hydra/sweeper/</span></code>. You can replace <code class="docutils literal notranslate"><span class="pre">bash</span></code> with <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> to run on a cluster.</p>
 <p>In total, you should see <code class="docutils literal notranslate"><span class="pre">min(hydra.sweeper.optim.num_workers,</span> <span class="pre">hydra.launcher.array_parallelism)</span> <span class="pre">+</span> <span class="pre">1</span></code> jobs. The <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">1</span></code> is for the daemon job that monitors the training process. See the <a class="reference external" href="https://github.com/camera-culture/ACI/blob/main/configs/hydra/sweeper/evolution_nevergrad.yaml"><code class="docutils literal notranslate"><span class="pre">evolution_nevergrad.yaml</span></code></a> and <a class="reference external" href="https://github.com/camera-culture/ACI/blob/main/configs/hydra/launcher/slurm.yaml"><code class="docutils literal notranslate"><span class="pre">slurm.yaml</span></code></a> for more info.</p>
+<p>Running on a cluster can aid in parallelizing the training process. And note the
+<code class="docutils literal notranslate"><span class="pre">--multirun</span></code> flag (can also be <code class="docutils literal notranslate"><span class="pre">-m</span></code>) is required to run a sweep.</p>
+<section id="adding-parameters-to-optimize">
+<h3>Adding parameters to optimize<a class="headerlink" href="#adding-parameters-to-optimize" title="Link to this heading">¶</a></h3>
+<p>Nevergrad requires there to be optimization parameters to sweep over; see <a class="reference external" href="https://hydra.cc/docs/plugins/nevergrad_sweeper/#defining-the-parameters">the docs</a> for more details. In our framework, we’ve provided a few examples of how to set up the parameters. To use those, for example, you can run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span><span class="nv">evo</span><span class="o">=</span>evo<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>+exp/mutations<span class="o">=[</span>res,num_eyes,lon_range<span class="o">]</span><span class="w"> </span>-m
+</pre></div>
+</div>
+<p>This will enable the resolution, number of eyes, and placement range mutations. Alternatively, you can just specify the grouping.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span><span class="nv">evo</span><span class="o">=</span>evo<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>+exp/mutations/groupings/numeyes1_res0_lon1<span class="w"> </span>-m
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">+</span></code> before the <code class="docutils literal notranslate"><span class="pre">exp/mutations</span></code> parameter. This is required to add to the existing list of mutations as hydra will complain that the key doesn’t exist before adding.</p>
+</div>
+</section>
 <section id="resuming-a-failed-evolution">
 <h3>Resuming a failed evolution<a class="headerlink" href="#resuming-a-failed-evolution" title="Link to this heading">¶</a></h3>
 <p>To resume a failed sweep for the nevergrad sweeper, you simply need to rerun your
@@ -390,11 +441,8 @@ different day, you may need to either:</p>
 <ol class="arabic simple">
 <li><p>Copy the failed evolutionary logdir to a new log directory matching the logdir
 pattern for that day (recommended).</p></li>
-<li><p>Change the logdir to the previous day
-(i.e. <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">logdir=logs/&lt;old</span> <span class="pre">date&gt;/${expname}</span></code>).</p></li>
-<li><p>Change the optimizer path in the config to point to the correct path. This may cause
-issues down the line with the <code class="docutils literal notranslate"><span class="pre">parse_evos.py</span></code> script since the output log directory is
-in two places.</p></li>
+<li><p>Change the logdir to the previous day (i.e. <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">logdir=logs/&lt;old</span> <span class="pre">date&gt;/${expname}</span></code>).</p></li>
+<li><p>Change the optimizer path in the config to point to the correct path.</p></li>
 </ol>
 </section>
 </section>
@@ -405,13 +453,15 @@ simple grid search of different parameters. This can be done via Hydra’s basic
 functionality. To run a sweep, which trains each agent with a different set of
 parameters, you can run the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If running on a slurm-enabled cluster</span>
-sbatch<span class="w"> </span>scripts/&lt;CLUSTER&gt;.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>&lt;SWEEP_PARAMS&gt;<span class="w"> </span>--multirun
+sbatch<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span>hydra/launcher<span class="o">=</span>&lt;CLUSTER&gt;<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>&lt;SWEEP_PARAMS&gt;<span class="w"> </span>--multirun
 <span class="c1"># If running locally</span>
-bash<span class="w"> </span>scripts/local.sh<span class="w"> </span>scripts/train.sh<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>&lt;SWEEP_PARAMS&gt;<span class="w"> </span>--multirun
+bash<span class="w"> </span>scripts/run.sh<span class="w"> </span>cambrian/ml/trainer.py<span class="w"> </span>--train<span class="w"> </span><span class="nv">exp</span><span class="o">=</span>&lt;EXPERIMENT&gt;<span class="w"> </span>&lt;SWEEP_PARAMS&gt;<span class="w"> </span>--multirun
 </pre></div>
 </div>
 <p>Running on a cluster can aid in parallelizing the training process. And note the
-<code class="docutils literal notranslate"><span class="pre">--multirun</span></code> flag (can also <code class="docutils literal notranslate"><span class="pre">-m</span></code>) is required to run a sweep.</p>
+<code class="docutils literal notranslate"><span class="pre">--multirun</span></code> flag (can also be <code class="docutils literal notranslate"><span class="pre">-m</span></code>) is required to run a sweep.</p>
+<section id="adding-sweep-parameters">
+<h3>Adding sweep parameters<a class="headerlink" href="#adding-sweep-parameters" title="Link to this heading">¶</a></h3>
 <p>The simplest way to specify sweep params is via a comma separated list, e.g.
 <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">param1=1,2,3</span> <span class="pre">param2='[1,2],[3,4]'</span></code>. The previous example will run six total runs,
 iterating through all the permutations of the grid search. Please refer to
@@ -432,8 +482,9 @@ sweep parameters to the experiment name.</p>
 <p class="admonition-title">Note</p>
 <p>The basic sweeper will sweep through <em>all</em> permutations of the parameters. This can
 be very slow for large sweeps. For more advanced sweeps, consider using optimization
-via <code class="docutils literal notranslate"><span class="pre">scripts/evo.sh</span></code> (<a class="reference internal" href="#running-evolution">see above</a>).</p>
+via <code class="docutils literal notranslate"><span class="pre">evo=evo</span></code> (<a class="reference internal" href="#running-evolution">see above</a>).</p>
 </div>
+</section>
 </section>
 </section>
 
@@ -451,14 +502,14 @@ via <code class="docutils literal notranslate"><span class="pre">scripts/evo.sh<
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="configuration/config.html">
+          <a class="prev-page" href="configuration.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Configuration</div>
+                <div class="title">Configuring an Experiment</div>
                 
               </div>
             </a>
@@ -499,10 +550,14 @@ via <code class="docutils literal notranslate"><span class="pre">scripts/evo.sh<
 </ul>
 </li>
 <li><a class="reference internal" href="#running-evolution">Running evolution</a><ul>
+<li><a class="reference internal" href="#adding-parameters-to-optimize">Adding parameters to optimize</a></li>
 <li><a class="reference internal" href="#resuming-a-failed-evolution">Resuming a failed evolution</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#running-a-training-sweep">Running a training sweep</a></li>
+<li><a class="reference internal" href="#running-a-training-sweep">Running a training sweep</a><ul>
+<li><a class="reference internal" href="#adding-sweep-parameters">Adding sweep parameters</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

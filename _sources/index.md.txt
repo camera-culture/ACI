@@ -6,7 +6,6 @@
 :maxdepth: 2
 
 Home <self>
-setup
 usage/index
 examples/index
 reference/index

@@ -4,7 +4,7 @@ Contributing to the repository is fairly easy, so please see below for instructi
 
 ## Setup
 
-There are two forms of contributions: source code or documentation. Editing the documentation is as simple as cloning the repo and adding/editing content within the `docs` folder. All documentation is written in `markdown` and converted to `html` through `myst_parser` and `sphinx`. To edit the source code, as well as the documentation, you will want to install the package [through a symlink](./setup.md#from-sources).
+There are two forms of contributions: source code or documentation. Editing the documentation is as simple as cloning the repo and adding/editing content within the `docs` folder. All documentation is written in `markdown` and converted to `html` through `myst_parser` and `sphinx`. To edit the source code, as well as the documentation, you will want to install the package [through a symlink](#installing-a-symbolic-linked-version-for-testing).
 
 ```{note}
 A `conda` or `virtualenv` will add isolation to your python environments and reduce conflicts amongst packages. It is _highly_ recommended to use one!!
@@ -93,7 +93,7 @@ cambrian/
 Please follow [Google's guidelines for Python Styling](https://google.github.io/styleguide/pyguide.html). These comments are also used to automatically generate the documentation. For Visual Studio Code users, the [Python Docstring Generator](https://github.com/NilsJPWerner/autoDocstring) package may be helpful.
 
 ```{note}
-Any docstrings parsed by `autosimple`, such as the functions in [usage.md](./usage/index.md), are parsed as markdown. Docstrings parsed by autoapi, such as in [cambrian.envs.MjCambrianEnv](./usage/api/cambrian/envs/env/index), are parsed as reStructuredText.
+Any docstrings parsed by `autosimple`, such as the functions in [](./usage/index.md), are parsed as markdown. Docstrings parsed by autoapi, such as in [](#cambrian.envs.MjCambrianEnv), are parsed as reStructuredText.
 ```
 
 ### Editing the Documentation

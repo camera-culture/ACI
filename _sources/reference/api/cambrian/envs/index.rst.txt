@@ -329,19 +329,15 @@ Package Contents
    :vartype n_eval_episodes: int
    :ivar add_overlays: Whether to add overlays or not.
    :vartype add_overlays: bool
-   :ivar add_debug_overlay: Whether to add a debug overlay or not. This will draw
-                            debug information on the screen. If `add_overlays` is False, this will be
-                            ignored.
-   :vartype add_debug_overlay: bool
    :ivar clear_overlays_on_reset: Whether to clear the overlays on reset or not.
                                   Consequence of setting to False is that when drawing position overlays
                                   and when mazes change between evaluations, the sites will be drawn on top
                                   of each other which may not be desired. When record is False, the overlays
                                   are always be cleared.
    :vartype clear_overlays_on_reset: bool
-   :ivar render_agent_composite_only: If set, will only render the
-                                      composite image all agents.
-   :vartype render_agent_composite_only: Optional[bool]
+   :ivar debug_overlays_size: The size of the debug overlays. This is a
+                              percentage of the total renderer size. If 0, debug overlays are disabled.
+   :vartype debug_overlays_size: float
    :ivar renderer: The default viewer config to
                    use for the mujoco viewer. If unset, no renderer will be used. Should
                    set to None if `render` will never be called. This may be useful to

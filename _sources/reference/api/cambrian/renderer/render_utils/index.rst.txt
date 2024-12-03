@@ -16,7 +16,9 @@ Functions
 
    cambrian.renderer.render_utils.resize_with_aspect_fill
    cambrian.renderer.render_utils.convert_depth_distances
-   cambrian.renderer.render_utils.add_white_border
+   cambrian.renderer.render_utils.add_border
+   cambrian.renderer.render_utils.generate_composite
+   cambrian.renderer.render_utils.project_images_to_spherical_panorama
 
 
 Module Contents
@@ -54,8 +56,33 @@ Module Contents
       [this code](https://github.com/google-deepmind/mujoco/blob/main/            python/mujoco/renderer.py).
 
 
-.. py:function:: add_white_border(image, border_size)
+.. py:function:: add_border(image, border_size, color = (0, 0, 0))
 
    Add a white border around the image.
+
+
+.. py:function:: generate_composite(images, max_res)
+
+   This is a debug method which renders the images as a composite image.
+
+   Will appear as a compound eye. For example, if we have a 3x3 grid of eyes:
+       TL T TR
+       ML M MR
+       BL B BR
+
+   Each eye has a red border around it.
+
+
+.. py:function:: project_images_to_spherical_panorama(images, yaw_angles, fov_x, fov_y, total_resolution)
+
+   Projects multiple camera images onto a spherical surface to create a panorama.
+
+   :Parameters: * **images** -- List of images from the cameras.
+                * **yaw_angles** -- List of yaw angles (in degrees) corresponding to each camera image.
+                * **fov_x** -- Horizontal field of view of each camera in degrees.
+                * **fov_y** -- Vertical field of view of each camera in degrees.
+                * **total_resolution** -- Resolution (width, height) of the resulting panorama.
+
+   :returns: The spherical panorama image as a NumPy array.
 
 

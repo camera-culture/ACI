@@ -105,17 +105,12 @@ Package Contents
 
 
 
-   .. py:method:: create_composite_image()
+   .. py:method:: render()
 
-      Creates a composite image from the eyes. If there are no eyes, then this
-      returns None.
+      Renders the eyes and returns the debug image.
 
-      Will appear as a compound eye. For example, if we have a 3x3 grid of eyes:
-          TL T TR
-          ML M MR
-          BL B BR
-
-      Each eye has a white border around it.
+      We don't know where the eyes are placed, so for simplicity, we'll just return
+      the first eye's render.
 
 
 
@@ -206,20 +201,6 @@ Package Contents
       about the qpos structure. For fine tuned adjustment of perturbation behavior,
       this method should be overridden in the subclass.
 
-
-
-   .. py:property:: mat
-      :type: numpy.ndarray
-
-
-      Returns the rotation matrix of the agent in the environment.
-
-
-   .. py:property:: speed
-      :type: float
-
-
-      Returns the speed of the agent in the environment.
 
 
    .. py:property:: last_action
@@ -321,25 +302,6 @@ Package Contents
                           agent.
 
    :vartype use_contact_obs: bool
-   :ivar eyes_lat_range: The x range of the eye. This is
-                         used to determine the placement of the eye on the agent. Specified in
-                         degrees. This is the latitudinal/vertical range of the evenly placed eye
-                         about the agent's bounding sphere.
-   :vartype eyes_lat_range: Optional[Tuple[float, float]]
-   :ivar eyes_lon_range: The y range of the eye. This is
-                         used to determine the placement of the eye on the agent. Specified in
-                         degrees. This is the longitudinal/horizontal range of the evenly placed eye
-                         about the agent's bounding sphere.
-   :vartype eyes_lon_range: Optional[Tuple[float, float]]
-   :ivar num_eyes_to_generate: The num of eyes to generate.
-                               If this is specified, then the eyes will be generated on a spherical
-                               grid. The first element is the number of eyes to generate latitudinally and
-                               the second element is the number of eyes to generate longitudinally. The
-                               eyes will be named sequentially starting from `eye_0`. Each eye will default
-                               to use the first eye config in the `eyes` attribute. `eyes` must have a
-                               length of 1 if this is specified. Each eye is named `eye_{lat}_{lon}` where
-                               `lat` is the latitude index and `lon` is the longitude index.
-   :vartype num_eyes_to_generate: Optional[Tuple[int, int]]
    :ivar eyes: The eyes on the agent. The keys are the
                names of the eyes and the values are the configs for the eyes. The eyes will
                be placed on the agent at the specified coordinates.
@@ -404,13 +366,6 @@ Package Contents
 
 
       Overrides the base implementation to only have two elements.
-
-
-   .. py:property:: speed
-      :type: float
-
-
-      Returns the speed of the agent in the environment.
 
 
 .. py:class:: MjCambrianAgentPointMazeOptimal(config, name, *, target, speed = -0.75, distance_threshold = 2.0, use_optimal_trajectory = False)

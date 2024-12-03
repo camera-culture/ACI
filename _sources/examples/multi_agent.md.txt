@@ -1,6 +1,6 @@
 # Implementing a Multi-Agent Task
 
-This document describes how to train multi-agent systems using the ACI framework. This example is very similar to the [Detection](../detection/README.md) example, so you may want to read that first.
+This document describes how to train multi-agent systems using the ACI framework. This example is very similar to the [](detection.md) example, so you may want to read that first.
 
 ## Overview
 

@@ -134,7 +134,7 @@ Module Contents
    :Parameters: **config** (*MjCambrianOpticsConfig*) -- Config for the optics module.
 
 
-   .. py:method:: render()
+   .. py:method:: step()
 
       Overwrites the default render method to apply the depth invariant PSF to the
       image.

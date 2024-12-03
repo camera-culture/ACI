@@ -2,7 +2,16 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB8Y1XJVV1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TB8Y1XJVV1');
+    </script>
+    <link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
     <link rel="shortcut icon" href="_static/eye.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.08.06 --><title>Index - cambrian 0.0.0 documentation</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
@@ -220,41 +229,36 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="usage/index.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="usage/configuration/index.html">Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Configuration</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage/configuration/hydra.html">Hydra</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage/configuration/config.html">Configuration</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="usage/configuration.html">Configuring an Experiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage/training.html">Training an Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage/visualizing.html">Visualizing the Env</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="examples/detection.html">Detection Task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/multi_agent.html">Implementing a Multi-Agent Task</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="reference/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="reference/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/envs/index.html">cambrian.envs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of cambrian.envs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/envs/done_fns/index.html">cambrian.envs.done_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/envs/reward_fns/index.html">cambrian.envs.reward_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/envs/step_fns/index.html">cambrian.envs.step_fns</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/agents/index.html">cambrian.agents</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of cambrian.agents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/agents/agent/index.html">cambrian.agents.agent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/agents/object/index.html">cambrian.agents.object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/agents/point/index.html">cambrian.agents.point</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/eyes/index.html">cambrian.eyes</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of cambrian.eyes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/eyes/eye/index.html">cambrian.eyes.eye</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/eyes/optics/index.html">cambrian.eyes.optics</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/ml/index.html">cambrian.ml</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of cambrian.ml</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/ml/callbacks/index.html">cambrian.ml.callbacks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/ml/constraint_fns/index.html">cambrian.ml.constraint_fns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/ml/evo/index.html">cambrian.ml.evo</a></li>
@@ -264,13 +268,13 @@
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/ml/trainer/index.html">cambrian.ml.trainer</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/renderer/index.html">cambrian.renderer</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of cambrian.renderer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/renderer/overlays/index.html">cambrian.renderer.overlays</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/renderer/render_utils/index.html">cambrian.renderer.render_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/renderer/renderer/index.html">cambrian.renderer.renderer</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/utils/index.html">cambrian.utils</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reference/api/cambrian/utils/index.html">cambrian.utils</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of cambrian.utils</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/utils/cambrian_xml/index.html">cambrian.utils.cambrian_xml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/utils/config/index.html">cambrian.utils.config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/api/cambrian/utils/logger/index.html">cambrian.utils.logger</a></li>
@@ -389,7 +393,7 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="reference/api/cambrian/utils/cambrian_xml/index.html#cambrian.utils.cambrian_xml.MjCambrianXML.add">add() (MjCambrianXML method)</a>
 </li>
-        <li><a href="reference/api/cambrian/renderer/render_utils/index.html#cambrian.renderer.render_utils.add_white_border">add_white_border() (in module cambrian.renderer.render_utils)</a>
+        <li><a href="reference/api/cambrian/renderer/render_utils/index.html#cambrian.renderer.render_utils.add_border">add_border() (in module cambrian.renderer.render_utils)</a>
 </li>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.agent_selected">agent_selected() (in module cambrian.utils)</a>
 </li>
@@ -672,8 +676,6 @@
           <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.MjCambrianJoint.create">(MjCambrianJoint static method)</a>
 </li>
         </ul></li>
-        <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.create_composite_image">create_composite_image() (MjCambrianAgent method)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.create_composite_image">[1]</a>
-</li>
         <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.cumulative_reward">cumulative_reward (MjCambrianEnv property)</a>
 </li>
     </ul></td>
@@ -732,6 +734,8 @@
 </li>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.evaluate_policy">evaluate_policy() (in module cambrian.utils)</a>
 </li>
+        <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.eyes">eyes (MjCambrianMultiEye property)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -772,16 +776,22 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="reference/api/cambrian/renderer/render_utils/index.html#cambrian.renderer.render_utils.generate_composite">generate_composite() (in module cambrian.renderer.render_utils)</a>
+</li>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.generate_sequence_from_range">generate_sequence_from_range() (in module cambrian.utils)</a>
 </li>
         <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.generate_xml">generate_xml() (MjCambrianAgent method)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.generate_xml">[1]</a>
 
         <ul>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianApproxMultiEye.generate_xml">(MjCambrianApproxMultiEye method)</a>
+</li>
           <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.generate_xml">(MjCambrianEnv method)</a>
 </li>
           <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.generate_xml">(MjCambrianEye method)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.generate_xml">[1]</a>
 </li>
           <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianMazeEnv.generate_xml">(MjCambrianMazeEnv method)</a>
+</li>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.generate_xml">(MjCambrianMultiEye method)</a>
 </li>
         </ul></li>
         <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.geom">geom (MjCambrianAgent property)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.geom">[1]</a>
@@ -802,12 +812,12 @@
 </li>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.get_body_name">get_body_name() (in module cambrian.utils)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.get_camera_id">get_camera_id() (in module cambrian.utils)</a>
 </li>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.get_camera_name">get_camera_name() (in module cambrian.utils)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.get_geom_id">get_geom_id() (in module cambrian.utils)</a>
 </li>
         <li><a href="reference/api/cambrian/utils/index.html#cambrian.utils.get_geom_name">get_geom_name() (in module cambrian.utils)</a>
@@ -926,8 +936,6 @@
 </li>
         <li><a href="reference/api/cambrian/utils/wrappers/index.html#cambrian.utils.wrappers.make_wrapped_env">make_wrapped_env() (in module cambrian.utils.wrappers)</a>
 </li>
-        <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.mat">mat (MjCambrianAgent property)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.mat">[1]</a>
-</li>
         <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.max_episode_steps">max_episode_steps (MjCambrianEnv property)</a>
 </li>
         <li><a href="reference/api/cambrian/ml/features_extractors/index.html#cambrian.ml.features_extractors.maybe_transpose_obs">maybe_transpose_obs() (in module cambrian.ml.features_extractors)</a>
@@ -994,6 +1002,10 @@
         </ul></li>
         <li><a href="reference/api/cambrian/eyes/optics/index.html#cambrian.eyes.optics.MjCambrianApertureConfig">MjCambrianApertureConfig (class in cambrian.eyes.optics)</a>
 </li>
+        <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianApproxMultiEye">MjCambrianApproxMultiEye (class in cambrian.eyes)</a>
+</li>
+        <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianApproxMultiEyeConfig">MjCambrianApproxMultiEyeConfig (class in cambrian.eyes)</a>
+</li>
         <li><a href="reference/api/cambrian/utils/config/index.html#cambrian.utils.config.MjCambrianBaseConfig">MjCambrianBaseConfig (class in cambrian.utils.config)</a>
 </li>
         <li><a href="reference/api/cambrian/ml/callbacks/index.html#cambrian.ml.callbacks.MjCambrianCallbackListWithSharedParent">MjCambrianCallbackListWithSharedParent (class in cambrian.ml.callbacks)</a>
@@ -1054,10 +1066,14 @@
 </li>
         <li><a href="reference/api/cambrian/ml/model/index.html#cambrian.ml.model.MjCambrianModel">MjCambrianModel (class in cambrian.ml.model)</a>
 </li>
-        <li><a href="reference/api/cambrian/ml/features_extractors/index.html#cambrian.ml.features_extractors.MjCambrianNatureCNNExtractor">MjCambrianNatureCNNExtractor (class in cambrian.ml.features_extractors)</a>
+        <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye">MjCambrianMultiEye (class in cambrian.eyes)</a>
+</li>
+        <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEyeConfig">MjCambrianMultiEyeConfig (class in cambrian.eyes)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="reference/api/cambrian/ml/features_extractors/index.html#cambrian.ml.features_extractors.MjCambrianNatureCNNExtractor">MjCambrianNatureCNNExtractor (class in cambrian.ml.features_extractors)</a>
+</li>
         <li><a href="reference/api/cambrian/renderer/renderer/index.html#cambrian.renderer.renderer.MjCambrianOffscreenViewer">MjCambrianOffscreenViewer (class in cambrian.renderer.renderer)</a>
 </li>
         <li><a href="reference/api/cambrian/renderer/renderer/index.html#cambrian.renderer.renderer.MjCambrianOnscreenViewer">MjCambrianOnscreenViewer (class in cambrian.renderer.renderer)</a>
@@ -1202,14 +1218,14 @@
         <ul>
           <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.name">(MjCambrianEye property)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.name">[1]</a>
 </li>
-        </ul></li>
-        <li><a href="reference/api/cambrian/ml/constraint_fns/index.html#cambrian.ml.constraint_fns.nevergrad_constraint_fn">nevergrad_constraint_fn() (in module cambrian.ml.constraint_fns)</a>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.name">(MjCambrianMultiEye property)</a>
 </li>
+        </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.num_agents">num_agents (MjCambrianEnv property)</a>
+        <li><a href="reference/api/cambrian/ml/constraint_fns/index.html#cambrian.ml.constraint_fns.nevergrad_constraint_fn">nevergrad_constraint_fn() (in module cambrian.ml.constraint_fns)</a>
 </li>
-        <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.num_pixels">num_pixels (MjCambrianEye property)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.num_pixels">[1]</a>
+        <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.num_agents">num_agents (MjCambrianEnv property)</a>
 </li>
         <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.num_timesteps">num_timesteps (MjCambrianEnv property)</a>
 </li>
@@ -1225,6 +1241,8 @@
 
         <ul>
           <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.observation_space">(MjCambrianEye property)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.observation_space">[1]</a>
+</li>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.observation_space">(MjCambrianMultiEye property)</a>
 </li>
           <li><a href="reference/api/cambrian/utils/wrappers/index.html#cambrian.utils.wrappers.MjCambrianPettingZooEnvWrapper.observation_space">(MjCambrianPettingZooEnvWrapper property)</a>
 </li>
@@ -1261,10 +1279,10 @@
 </li>
         <li><a href="reference/api/cambrian/ml/features_extractors/index.html#cambrian.ml.features_extractors.PermutedFlattenExtractor">PermutedFlattenExtractor (class in cambrian.ml.features_extractors)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.perturb_init_pose">perturb_init_pose() (MjCambrianAgent method)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.perturb_init_pose">[1]</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="reference/api/cambrian/utils/config/index.html#cambrian.utils.config.MjCambrianContainerConfig.pickle">pickle() (MjCambrianContainerConfig method)</a>
 </li>
         <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.pos">pos (MjCambrianAgent property)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.pos">[1]</a>
@@ -1274,6 +1292,12 @@
         <li><a href="reference/api/cambrian/ml/model/index.html#cambrian.ml.model.MjCambrianModel.predict">predict() (MjCambrianModel method)</a>
 </li>
         <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.prev_obs">prev_obs (MjCambrianEye property)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.prev_obs">[1]</a>
+
+        <ul>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.prev_obs">(MjCambrianMultiEye property)</a>
+</li>
+        </ul></li>
+        <li><a href="reference/api/cambrian/renderer/render_utils/index.html#cambrian.renderer.render_utils.project_images_to_spherical_panorama">project_images_to_spherical_panorama() (in module cambrian.renderer.render_utils)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1305,20 +1329,18 @@
 </li>
         <li><a href="reference/api/cambrian/utils/cambrian_xml/index.html#cambrian.utils.cambrian_xml.MjCambrianXML.remove">remove() (MjCambrianXML method)</a>
 </li>
-        <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.render">render() (MjCambrianEnv method)</a>
+        <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.render">render() (MjCambrianAgent method)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.render">[1]</a>
 
         <ul>
+          <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.render">(MjCambrianEnv method)</a>
+</li>
           <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.render">(MjCambrianEye method)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.render">[1]</a>
 </li>
-          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianOpticsEye.render">(MjCambrianOpticsEye method)</a>, <a href="reference/api/cambrian/eyes/optics/index.html#cambrian.eyes.optics.MjCambrianOpticsEye.render">[1]</a>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.render">(MjCambrianMultiEye method)</a>
 </li>
         </ul></li>
         <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.renderer">renderer (MjCambrianEnv property)</a>
-
-        <ul>
-          <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.renderer">(MjCambrianEye property)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.renderer">[1]</a>
 </li>
-        </ul></li>
         <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.reset">reset() (MjCambrianAgent method)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.reset">[1]</a>
 
         <ul>
@@ -1326,11 +1348,15 @@
 </li>
           <li><a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgentPointMazeRandom.reset">(MjCambrianAgentPointMazeRandom method)</a>, <a href="reference/api/cambrian/agents/point/index.html#cambrian.agents.point.MjCambrianAgentPointMazeRandom.reset">[1]</a>
 </li>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianApproxMultiEye.reset">(MjCambrianApproxMultiEye method)</a>
+</li>
           <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.reset">(MjCambrianEnv method)</a>
 </li>
           <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.reset">(MjCambrianEye method)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.reset">[1]</a>
 </li>
           <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianMazeEnv.reset">(MjCambrianMazeEnv method)</a>
+</li>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.reset">(MjCambrianMultiEye method)</a>
 </li>
           <li><a href="reference/api/cambrian/utils/wrappers/index.html#cambrian.utils.wrappers.MjCambrianPettingZooEnvWrapper.reset">(MjCambrianPettingZooEnvWrapper method)</a>
 </li>
@@ -1403,12 +1429,6 @@
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.speed">speed (MjCambrianAgent property)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.speed">[1]</a>
-
-        <ul>
-          <li><a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgentPoint.speed">(MjCambrianAgentPoint property)</a>, <a href="reference/api/cambrian/agents/point/index.html#cambrian.agents.point.MjCambrianAgentPoint.speed">[1]</a>
-</li>
-        </ul></li>
         <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.stashed_cumulative_reward">stashed_cumulative_reward (MjCambrianEnv property)</a>
 </li>
         <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.state">state() (MjCambrianEnv method)</a>
@@ -1416,11 +1436,17 @@
         <li><a href="reference/api/cambrian/agents/agent/index.html#cambrian.agents.agent.MjCambrianAgent.step">step() (MjCambrianAgent method)</a>, <a href="reference/api/cambrian/agents/index.html#cambrian.agents.MjCambrianAgent.step">[1]</a>
 
         <ul>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianApproxMultiEye.step">(MjCambrianApproxMultiEye method)</a>
+</li>
           <li><a href="reference/api/cambrian/utils/wrappers/index.html#cambrian.utils.wrappers.MjCambrianConstantActionWrapper.step">(MjCambrianConstantActionWrapper method)</a>
 </li>
           <li><a href="reference/api/cambrian/envs/index.html#cambrian.envs.MjCambrianEnv.step">(MjCambrianEnv method)</a>
 </li>
           <li><a href="reference/api/cambrian/eyes/eye/index.html#cambrian.eyes.eye.MjCambrianEye.step">(MjCambrianEye method)</a>, <a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianEye.step">[1]</a>
+</li>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianMultiEye.step">(MjCambrianMultiEye method)</a>
+</li>
+          <li><a href="reference/api/cambrian/eyes/index.html#cambrian.eyes.MjCambrianOpticsEye.step">(MjCambrianOpticsEye method)</a>, <a href="reference/api/cambrian/eyes/optics/index.html#cambrian.eyes.optics.MjCambrianOpticsEye.step">[1]</a>
 </li>
           <li><a href="reference/api/cambrian/utils/wrappers/index.html#cambrian.utils.wrappers.MjCambrianPettingZooEnvWrapper.step">(MjCambrianPettingZooEnvWrapper method)</a>
 </li>

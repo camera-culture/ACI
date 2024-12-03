@@ -75,10 +75,15 @@ Package Contents
                 * **model** (*MjCambrianModel*) -- The model to evaluate.
                 * **num_runs** (*int*) -- The number of runs to evaluate the policy on.
 
-   :keyword record_path: The path to save the video to. If None, the video
-                         is not saved. This is passed directly to MjCambrianEnv.renderer.save(), so
-                         see that method for more details.
-   :kwtype record_path: Optional[Path]
+   :keyword record_kwargs: The keyword arguments to pass to the save
+                           method of the environment. If None, the environment will not be recorded.
+   :kwtype record_kwargs: Dict[str, Any]
+   :keyword step_callback: The callback function to call at each step.
+                           If the function returns False, the evaluation will stop.
+   :kwtype step_callback: Callable[[], bool]
+   :keyword done_callback: The callback function to call when a run
+                           is done. If the function returns False, the evaluation will stop.
+   :kwtype done_callback: Callable[[int], bool]
 
 
 .. py:function:: save_data(data, outdir, pickle_file)
